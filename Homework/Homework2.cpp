@@ -18,12 +18,23 @@ int main(){
 
 // Middle initial out put
   update = name.insert(5, " S. ");
-  cout << update << endl << endl;
+  cout << update << endl;
 
-  cout << "My initials are " << name[0] << "." << update[6] << "." << name[9];
+// All initial output
+  cout << "My initials are " << name[0] << "." << update[6] << "." << name[9] << "." << endl << endl;
 
 
+// Part 2 of homework
+// Weather input
+  string weather, temp;
+  cout << "Please describe the weather today. ";
+  getline(cin, weather);
+  cout << endl;
 
+  cout << "What is the temperature today? ";
+  cin >> temp;
+  cout << "Today's temperature is " + temp + "ºF and is " + weather + ". Have a nice day!"
+    << endl;
 
   return 0;
 }
