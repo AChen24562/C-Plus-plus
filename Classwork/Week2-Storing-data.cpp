@@ -20,12 +20,13 @@ int main(){
   //str[4] = temp;
 
 
+
  // -1
  char temp = str[0];
  str[0] = str[str.length()-1];
  str[str.length()-1] = temp;
 
-  cout << str << endl << endl;
+ cout << str << endl << endl;
 
   return 0;
 
