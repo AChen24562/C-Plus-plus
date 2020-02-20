@@ -9,7 +9,7 @@ using namespace std;
 
 int main(){
 // circumference + Area of circle
-  float pi = 3.1416;
+  const float pi = 3.1416;
   float radius;
 
   cout << "What is the radius of the circle?: ";
