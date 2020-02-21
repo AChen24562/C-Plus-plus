@@ -28,8 +28,8 @@ int main(){
     cout << c << endl; */
 
   //cout << endl << static_cast<char>(static_cast<int>(c) +32 );
-  
-  cout << endl <<  (c+=32);
+
+  cout << "The lowercase of this letter is: " <<  (c+=32);
 
  cout << endl;
 
