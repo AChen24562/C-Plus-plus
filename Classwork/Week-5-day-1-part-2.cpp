@@ -10,11 +10,11 @@ int main(){
   cout << "X\t" << "Y\t" << "Z\t" << endl;
   cout << "---\t" << "---\t" << "---\t" << endl;
 
-  cout << (x+=1) << "\t" << (y+=2) << "\t" << z-- << endl;
-  cout << x << "\t" << y << "\t" << z << endl;
-  cout << x << "\t" << y << "\t" << z << endl;
-  cout << x << "\t" << y << "\t" << z << endl;
-  cout << x << "\t" << y << "\t" << z << endl;
+  cout << x++ << "\t" << (y+=2) << "\t" << --z << endl;
+  cout << x++ << "\t" << (y+=2) << "\t" << --z << endl;
+  cout << x++ << "\t" << (y+=2) << "\t" << --z << endl;
+  cout << x++ << "\t" << (y+=2) << "\t" << --z << endl;
+  cout << x++ << "\t" << (y+=2) << "\t" << --z << endl;
 
 
 
