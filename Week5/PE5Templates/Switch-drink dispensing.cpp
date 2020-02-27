@@ -20,6 +20,19 @@ int main( ) {
     //use swithch() to to handle a vending machine menu above
     switch(option)
     {
+        case 1:
+            cout << "Coke Dispending...";
+            break;
+        case 2:
+            cout << "Sprite Dispending...";
+            break;
+        case 3:
+            cout << "Water Dispending...";
+        case 4:
+            cout << "Ice Tea Dispending...";
+            break;
+        default:
+            cout << "Error: No valid choice selected";
 
 
 

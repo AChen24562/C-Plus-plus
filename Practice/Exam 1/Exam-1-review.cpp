@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int main(){
+ int main(){
   // Decrement by 1
   int n = 5;
   cout << n-- << endl << n << endl;
@@ -30,7 +30,7 @@ cout << ((x >= 15) || !(x<=15)) << endl;
 int number;
 cout << "Enter another number: ";
 cin >> number;
-cout << number % 2 + 7;
+cout << number % 2 + 7 << endl;
 
 
 
