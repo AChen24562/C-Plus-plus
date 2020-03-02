@@ -15,7 +15,7 @@ else{
 }
 
 
-string number;
+int number;
 cout << "Enter a number between 120-130";
 cin  >> number;
 
