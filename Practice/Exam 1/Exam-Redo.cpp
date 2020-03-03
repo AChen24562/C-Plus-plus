@@ -14,15 +14,18 @@ else{
       cout << phrase << endl;
 }
 
+int x =9, y =9;
+x -= y;
+cout <<x << " " << y;
 
-string number;
+/* string number;
 cout << "Enter a number between 120-130";
 cin  >> number;
 
   if (number.size() != 120 - 130){
     cout << "Fail" << endl;
     return 0;
-  }
+  } */
 
 
 
