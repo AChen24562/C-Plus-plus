@@ -1,14 +1,17 @@
 #include <iostream>
+#include <iomanip>
+
 using namespace std;
 int main(){
-  int a, b, c;
-  cout << "Enter one integer: ";
-  cin >> a;
-  cout << "Enter a different integer";
-  cin >> b;
-  cout << "Enter a possible factor: ";
-  cin >> c;
 
+
+const int twenty = 20;
+const int ten =10;
+int dollar;
+cout << "Enter a whole dollar amount as an integer";
+cin >> dollar
+
+  if()
 
 
 
