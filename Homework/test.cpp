@@ -41,7 +41,6 @@ while(true);
 
 
 do{
-  do{
     while(choice == "B" || choice == "b" || choice == "C" || choice == "c"
           || choice == "T" || choice == "t"){
     if(choice == "B" || choice == "b"){
@@ -58,9 +57,9 @@ do{
            << "Your lunch item is: ";
       cin >> choice;
 // end of choice b
-}
 
-      if(choice == "C" || choice == "c"){
+
+      if(choice == "C" || choice == "c")
         cout << endl << "------------------"<<endl <<
         "One order of Chicken over Rice is $6.95" << endl
         << "------------------"<<endl;
@@ -75,9 +74,9 @@ do{
              << "(E) Exit" <<endl
              << "Your lunch item is: ";
         cin >> choice;
-}
+
 // end of choice C
-      if(choice == "T" || choice == "t"){
+      if(choice == "T" || choice == "t")
         cout << endl << "------------------"<<endl <<
          "One Tuna Sandwhich is $7.95." <<endl
         << "------------------" <<endl;
@@ -93,7 +92,7 @@ do{
              << "Your lunch item is: ";
         cin >> choice;
 // end of choice T
-      }
+
       if(choice == "E" || choice =="e"){
         cout << endl << "------------------"<<endl <<
          "EXIT LUNCH MENU." << endl << endl
@@ -106,6 +105,7 @@ do{
 
         return 0;
       }
+}
 
 
 
@@ -113,23 +113,7 @@ do{
 
 
   }
-}while(false);
-cout << endl << "------------------" << endl
-     << "Invalid Choice, Please enter another lunch item. ";
-cin >> choice;
-cout << "------------------" << endl;
-    if(choice == "E" || choice =="e"){
-          cout << endl << "------------------"<<endl <<
-          "EXIT LUNCH MENU." << endl << endl
-          << "---------------------------------------" << endl
-          << "You ordered " << items << " lunch item(s)." << endl
-          << "Please pay $" << setprecision(2) << fixed << amount <<"." << endl
-          <<"Enjoy your lunch!" <<endl <<endl
-          << "----------------------------" << endl
-          << "EXIT PROGRAM.";
 
-          return 0;
-        }
 }while(true);
 
 return 0;
