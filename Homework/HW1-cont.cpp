@@ -21,5 +21,9 @@ int main(){
 
   // Display total
   cout << left  << setw(20) << "Subtotal: " << "$15.97";
+
+
+  int remainder = dollar %20;
+  
   return 0;
 }

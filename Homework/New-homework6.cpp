@@ -18,14 +18,14 @@ int main(){
     cout << "Enter a Maximum integer between 1 and 100 (exclusive): ";
     cin >> maxVal;
 
-    if(minVal >= 0 && maxVal >= 0){
+    if(minVal > 1 && maxVal >= 0 && maxVal != 100){
       if (minVal < maxVal && minVal != maxVal){
         break;
         }
        else
           cout << "Max and Min Values are invalid" << endl;
     }else
-        cout << "Number must be a positive value" << endl;
+        cout << endl << "Number must be a positive value and not equal to 1 & 100" << endl;
 
       // New
 
