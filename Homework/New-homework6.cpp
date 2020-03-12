@@ -18,7 +18,7 @@ int main(){
     cout << "Enter a Maximum integer between 1 and 100 (exclusive): ";
     cin >> maxVal;
 
-    if(minVal > 1 && maxVal >= 0 && maxVal != 100){
+    if(minVal >= 0 && maxVal >= 0){
       if (minVal < maxVal && minVal != maxVal){
         break;
         }
