@@ -6,7 +6,8 @@
 using namespace std;
 
 int main(){
-  int dim;
+  double dim;
+int counter = 3;
 
   cout << "Multiplication Table" << endl
   << "---------------------------------" << endl
@@ -15,6 +16,44 @@ int main(){
   cout << endl;
 
 do{
+
+
+
+  if(dim == (int) dim){
+
+      if(dim > 0){
+        break;
+      }
+      else
+      counter--;
+      if(counter == 0){
+        cout << "You have no more attempts. Ending Program..." << endl;
+        return 0;
+      }
+      cout << endl <<"Dimension must be POSITIVE"
+           << endl << "You have " << counter << " attempt(s)."
+           << endl << "Enter a dimension: ";
+        cin >> dim;
+
+
+}
+  else{
+  counter--;
+  if(counter == 0){
+    cout << "You have no more attempts. Ending Program..." << endl;
+    return 0;
+  }
+  cout << endl << "Dimension must be an INTEGER"
+       << endl << "You have " << counter << " attempt(s)."
+       << endl << "Enter a dimension: ";
+       cin >> dim;
+}
+
+
+
+
+
+
 
 
 }while(true);
@@ -26,6 +65,11 @@ do{
     cout << " " << col * row << "\t";
     cout << endl;
   }
+
+
+
+
+
   /*int row, col;
   cout << "Enter the number of rows: ";
   cin >> row;
