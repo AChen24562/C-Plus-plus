@@ -49,13 +49,6 @@ do{
        cin >> dim;
 }
 
-
-
-
-
-
-
-
 }while(true);
 
   for(int row = 1; row < dim +1; row++)
