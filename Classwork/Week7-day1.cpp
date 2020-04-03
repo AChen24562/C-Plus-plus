@@ -17,7 +17,9 @@ int main(){
 */
 
 // number 2
-/*cout << "Enter a number " << endl;
+int counter =0;
+long long n;
+cout << "Enter a number " << endl;
 cin >> n;
 
 while(n>0){
@@ -26,7 +28,7 @@ n = n/10;
 counter ++;
 }
 cout<<endl << "You have " <<counter << " digits. " ;
-cout << endl;*/
+cout << endl;
 
 // PE
 /*for(int row = 1; row <5; row++)
