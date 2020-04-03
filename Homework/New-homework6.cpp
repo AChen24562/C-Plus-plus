@@ -35,7 +35,7 @@ int main(){
 }while(true);
 
 for(int i = (maxVal - 1); i > minVal; i--){
-  cout << i << endl;
+  cout << i << " ";
   }
 
 

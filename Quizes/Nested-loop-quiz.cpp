@@ -12,7 +12,7 @@ cout << "Table of C" << endl;
 
 for (int r =0; r < DIMENSION +1; r++){
   for (int c =0; c < DIMENSION; c++)
-  cout << "C";
+  cout << "C ";
   cout << endl;
 }
 

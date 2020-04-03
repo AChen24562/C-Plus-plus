@@ -12,11 +12,6 @@ bool isValid(int v, int r){
   return(v > 0 && v < 50);
 }
 
-void set_precision(){
-    cout.setf(ios::showpoint);
-    cout.setf(ios::fixed);
-    cout.precision(2);
- }
 
 int main(){
 
@@ -52,7 +47,7 @@ cout << left << setw(20) << "-------------" << setw(30) << "--------------------
 
 while(volt <=50){
       cout << left << setw(20) << volt << setw(30) << ohm ;
-      cout << ohmsLaw(volt, ohm);
+      ohmsLaw(volt, ohm);
       cout << endl;
       (volt += counter);
 }
@@ -65,10 +60,8 @@ while(volt <=50){
 
 // Functions
 double ohmsLaw(double v, double r){
-  //double ohms_law(int v, int o ) {
-    set_precision();
-      //return (v/static_cast<double>(o));
-      return (v/r);
+  double amp = v/r;
+  cout << setprecision(2) << fixed << amp;
 }
 
 
