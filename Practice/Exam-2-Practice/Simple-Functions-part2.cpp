@@ -1,27 +1,31 @@
 #include <iostream>
 using namespace std;
 
-
-// PE 2
-void intInput(int& x, int& y){
-   cout << "Enter two digits seperated by a space: ";
-   cin >> x >> y;
-   cout << endl;
+int inputNum(){
+  int num;
+  cout << "Enter a number: ";
+  cin >> num;
+  cout << endl;
+  return num;
 }
 
-void myletter(int x, int y){
-  if(x > y)
-    cout << "The letter that is returned is 'B'!";
-  else
-    cout << "The letter that is returned is 'S'!";
+int timesTwo(int num){
+    int newNum = num * 2;
+    cout << num << " * 2 = " << newNum;
+    return newNum;
 }
+
+void timesPi(double x){
+  double pi = 3.1415;
+  cout << "Multiplied by pi is " << x * pi;
+}
+
 int main(){
 
-//PE2
-int x ,y;
-  intInput(x, y);
-  cout << endl << endl;
-  myletter(x, y);
-
+int firstNum = inputNum();
+cout << endl;
+int newNum = timesTwo(firstNum);
+cout << endl;
+timesPi(newNum);
   return 0;
 }
