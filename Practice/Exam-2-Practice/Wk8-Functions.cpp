@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// #PE2
 char myletter(int x, int y){
   if (x > y){
     cout << "B";
