@@ -48,10 +48,7 @@ for(int r3 = 0; r3 < dim3; r3++){
   }
   cout << endl;
 }
-  cout << endl << endl;
-
-
-//PE11
+//  PE11
 const int dim4 =5;
 for(int r4 = 0; r4 < dim4; r4++){
   for(int c4 =0; c4 < dim4; c4++){
