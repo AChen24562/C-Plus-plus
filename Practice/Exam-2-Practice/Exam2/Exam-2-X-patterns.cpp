@@ -1,4 +1,4 @@
-/*#include <iostream>
+#include <iostream>
 using namespace std;
 
 int main(){
@@ -112,4 +112,4 @@ for(int r4 = 0; r4 < dim4; r4++){
   }
 
   return 0;
-}*/
+}
