@@ -1,4 +1,4 @@
-8\#include <iostream>
+#include <iostream>
 using namespace std;
 //Global Variables (A)
 //const int DIMENSION = 7;
