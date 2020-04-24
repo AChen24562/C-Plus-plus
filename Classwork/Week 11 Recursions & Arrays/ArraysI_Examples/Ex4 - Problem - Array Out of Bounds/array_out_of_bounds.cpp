@@ -39,7 +39,7 @@ int main() {
 
     // Only first 5 elements in the array have assigned values.
     // The rest elements in the array are garbage values or have no value yet.
-    for(int i=0; i<10; i++) {
+    for(int i=0; i<15; i++) {
         cout << "yourArray[" << i << "] = " << myArray[i] << endl;
     }
 

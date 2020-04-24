@@ -6,7 +6,7 @@
 #include <iostream>
 using namespace std;
 
-// Input function
+// Input function check
  int inputN(){
    double num;
    do{
@@ -53,7 +53,7 @@ using namespace std;
 
 
  //Recursive Method
- /*void outputStars(int n) {
+ void outputStars(int n) {
    int digit;
      if(n<10) {
        for(int i =0; i <n; i ++){
@@ -70,7 +70,7 @@ using namespace std;
          cout << endl;
          outputStars(n/10);
      }
- }*/
+ }
 
 int main(){
 
