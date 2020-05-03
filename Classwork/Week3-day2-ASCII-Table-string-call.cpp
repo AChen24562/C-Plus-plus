@@ -4,11 +4,11 @@ using namespace std;
 
 int main(){
   //Quiz Review
-  /* string topic = "Monday Quiz";
+   string topic = "Monday Quiz";
   cout << topic << endl;
   cout << topic.length() << endl;
   cout << topic[7] << endl;
-  cout << topic.substr(0,6); */
+  cout << topic.substr(0,6); 
 
 
 
