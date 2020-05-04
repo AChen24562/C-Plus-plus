@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-
+// Inserting an element
 void insertAt(int n[], int& amount, const int& size, int index, int newNumber){
   if (index >= size){
       cout << "Index number exceeds capacity of array. New number can not be added.\n";
@@ -17,7 +17,7 @@ void insertAt(int n[], int& amount, const int& size, int index, int newNumber){
       amount++;
   }
 }
-
+// Display Array
 void output(const int n[], const int& size){
   cout << "Array of " << size << " elements: ";
   for(int i = 0; i <size; i++){

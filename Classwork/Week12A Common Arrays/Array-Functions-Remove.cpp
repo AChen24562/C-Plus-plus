@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-
+// Getting index to remove an element
 int getIndex(const int n[], const int& size, int number){
   for(int i=0; i< size; i++){
     if(n[i] == number)
@@ -10,6 +10,7 @@ int getIndex(const int n[], const int& size, int number){
   return -1;
 }
 
+// Display array
 void output(const int n[], int amount){
   cout << "Array of " << amount << " elements: ";
     for(int i =0; i < amount; i++){
@@ -17,6 +18,8 @@ void output(const int n[], int amount){
     }
 }
 
+
+// Remove an element, used with get index function
 void removeElement(int n[], int& amount, int number){
   int index = getIndex(n, amount, number);
     if(index < 0){
