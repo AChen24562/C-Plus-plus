@@ -7,7 +7,7 @@ using namespace std;
 // iterative fibonacci solution (classic sequence starting from 0)
 // O(n) time complexity
 // 0 1 1 2 3 5 8 13 21
-long long    int fibonacci(int n) {
+    long long    int fibonacci(int n) {
     long long    int prev1=0, prev2=1, current;
 
     /*if (n==0) return  0;

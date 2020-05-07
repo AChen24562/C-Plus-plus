@@ -21,10 +21,10 @@ void write_backward  (int n){
     else
         {
             // Foward
-            //write_backward(n/10);
+            write_backward(n/10);
             cout<<(n%10) << " ";
             //Backward
-            write_backward(n/10);
+            //write_backward(n/10);
 
         }
 }

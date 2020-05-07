@@ -22,8 +22,3 @@ void countdown(int n) {
         countdown(n-1);
     }
 }
-// Iterative
-void countDown(int n) {
-  for(int i =n; i >=0; i--)
-  cout <<i<<" ";
-}

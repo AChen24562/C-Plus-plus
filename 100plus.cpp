@@ -5,7 +5,7 @@ using namespace std;
 int main(){
   int final =0;
 
-  for(int i =58; i <=100; i++){
+  for(int i =1; i <=100; i++){
     final += i;
     cout << final << " ";
   }

@@ -7,7 +7,6 @@ void createName(string name[]){
     cin >> name[0];
     cout << "Enter your Last Name: ";
     cin >> name[1];
-
 }
 
 void printName(string name[], int size){
