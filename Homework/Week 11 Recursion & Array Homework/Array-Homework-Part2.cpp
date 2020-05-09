@@ -19,7 +19,7 @@ void firstArray(int num[], const int size){
 void reverseNums(int num[], const int size){
   cout << "Original Array (b): ";
   for(int i = 0; i * 2 < size; i++){
-    
+    int x = num[i];
     num[i] = num[size-1-i];
     num[size-1-i]=x;
   }
