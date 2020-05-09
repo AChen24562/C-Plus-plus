@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+// Print Foward
 void printDigits(int num){
   if(num <10){
     cout << num << " ";
@@ -14,6 +14,7 @@ void printDigits(int num){
 
 }
 
+// Print Backwards
 void printDigitsReverse(int num){
   if(num <10){
     cout << num << " ";
@@ -27,6 +28,7 @@ void printDigitsReverse(int num){
   }
 }
 
+// Main Functions
 int main(){
   int num;
   cout << "Enter a number: ";

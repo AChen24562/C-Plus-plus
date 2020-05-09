@@ -21,7 +21,7 @@ int main() {
    int n;
    cout<<"Enter a positive integer:" ;
    cin >> n;
-   
+
    printPrimeFactors(n);
    return 0;
 }

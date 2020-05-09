@@ -1,12 +1,13 @@
 #include <iostream>
+#include <ctime>
 using namespace std;
 
 void populate(int num[], int amount){
+  srand(time(NULL));
+
   for(int i =0; i < amount; i++){
-    num[i] = i+1;
-
+    num[i] = rand() %101;
   }
-
 }
 
 void display(int num [], int amount){
@@ -21,10 +22,12 @@ int main(){
   const int size = 100;
   int num[size];
 
-  int amount =5;
+  int amount =20;
 
   populate(num, amount);
-  display(num, size);
+  display(num, amount);
+
+
 
   return 0;
 }
