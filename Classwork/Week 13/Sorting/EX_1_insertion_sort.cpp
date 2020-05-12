@@ -28,7 +28,9 @@ void insertionSort(int a[], int size) {
     }
 }
 void populate(int a[], const int& SIZE) {
-    for(int i=0; i<SIZE; ++i) { a[i] = rand() % 100 + 1; }
+    for(int i=0; i<SIZE; ++i){
+       a[i] = rand() % 100 + 1;
+     }
 }
 void output(int a[], const int& SIZE) {
     for(int i=0; i<SIZE; ++i) { cout << a[i] << " "; }

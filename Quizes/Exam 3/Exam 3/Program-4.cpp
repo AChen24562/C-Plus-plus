@@ -6,7 +6,8 @@ using namespace std;
 int inputNum(int& random1, int& random2){
   srand(time(NULL));
 
-  random1 = rand() % 4996 + 5;
+  random1 = rand() % 4996 + 5; // Random number between
+  // 5 - 5,000 Range is 4,995 (+1 if inclusive) then add the lowest amount
   random2 = rand() % 29998 + 3;
 
 
