@@ -1,0 +1,4 @@
+John,Stewart,41412323,09/20/30
+Sean,Hannity,04023912,07/1/01
+Stephen,Colbert,35130032,01/10/95
+Bill,OReilly,54528712,04/13/89	

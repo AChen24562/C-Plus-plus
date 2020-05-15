@@ -16,8 +16,10 @@ void outfileAppend(string fileName){
   fout.close();
 }
 
+
+
 int main(){
-  string fileName = "Read-append.txt\t";
+  string fileName = "Read-append.txt";
   infile(fileName);
   outfileAppend(fileName);
 
