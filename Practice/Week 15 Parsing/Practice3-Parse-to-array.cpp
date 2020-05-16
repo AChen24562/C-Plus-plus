@@ -5,28 +5,27 @@ using namespace std;
 
 int main(){
   ifstream fin("data3.txt");
-
-  const int size =100;
-  int amount =0;
-  int array[size];
-
   string line, token;
+  const int size = 100;
+  int array[size];
+  int amount = 0 ;
 
   while(getline(fin, line)){
-    stringstream parser(line);
-    while(getline(parser,token, '|')){
+    stringstream parse(line);
+
+    while(getline(parse, token, '|')){
       stringstream converter(token);
       converter >> array[amount++];
     }
+
   }
 
-  fin.close();
+fin.close();
 
-  for(int i =0; i < amount; i++){
-    cout << array[i] << " ";
-  }
-  
-
+for(int i =0; i < amount; i++){
+  cout << array[i] << " ";
+}
+cout << endl;
 
 
 

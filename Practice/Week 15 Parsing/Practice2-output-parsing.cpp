@@ -5,20 +5,23 @@ using namespace std;
 
 int main(){
   ifstream fin("data1.txt");
-  ofstream fout("parsed-data.txt");
-
+  ofstream fout("parse-data1.txt");
   string line, token;
 
   while(getline(fin, line)){
-    stringstream parser(line);
-    while(getline(parser, token, '|')){
-      fout << token << ",";
+    stringstream parse(line);
+
+    while(getline(parse, token, '|')){
+      fout << token << " ";
+      cout << token << " ";
     }
     fout << endl;
+    cout << endl;
+
   }
 
-  fin.close();
-  fout.close();
+fin.close();
+fout.close();
 
       return 0;
 }

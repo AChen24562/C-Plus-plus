@@ -16,6 +16,7 @@ void outData(string fileName){
     cout << endl;
   }
   fin.close();
+
 }
 
 
