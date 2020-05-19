@@ -46,8 +46,6 @@ const int col =3;
       return isEven;
     }
 
-
-
   }
 
 int main(){

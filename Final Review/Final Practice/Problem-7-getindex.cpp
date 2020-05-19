@@ -16,7 +16,7 @@ int main(){
   const int size = 5;
   int array[size] = {0,1,2,3,4};
 
-  cout << "The number 4 is at index: " << getIndex(array, size, 10);
+  cout << "The number 4 is at index: " << getIndex(array, size, 4);
 
 
 
