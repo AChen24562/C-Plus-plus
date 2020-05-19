@@ -2,7 +2,7 @@
 using namespace std;
 
   int getIndex(int array[], int start, int end, int number){
-    if(start <= end){
+    while(start <= end){
       int middle = (start + end) / 2;
 
         if(array[middle] == number){

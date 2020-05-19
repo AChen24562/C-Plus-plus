@@ -17,12 +17,13 @@ int main(){
   getline(fin, text);
   cout << endl << text << endl;
 
-
   // Append additional text at the end of file;
   ofstream fout("Read-append.txt", ios:: app);
   fout << "\nAdditional text Append.\n";
   fin.close();
   fout.close();
+
+
 
   return 0;
 }

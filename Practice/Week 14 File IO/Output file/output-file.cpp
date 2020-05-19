@@ -3,8 +3,12 @@
 using namespace std;
 
 
+
 int main(){
-  ofstream fileout("output 1.txt");
-  fileout << "This is my first output file.\t";
-  fileout.close();
+  ofstream fout("test1.txt");
+  fout << "This is a test";
+  fout.close();
+
+
+
 }
