@@ -9,6 +9,7 @@ void swap(char& char1, char& char2){
   cout << char1 << endl << char2 << endl << endl;
 }
 
+
 int main(){
   char char1 = 'A';
   char char2 = 'Z';

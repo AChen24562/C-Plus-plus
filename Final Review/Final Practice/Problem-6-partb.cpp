@@ -38,6 +38,8 @@ const int col =3;
       }
     }
 
+
+
     if(numOdd > numEven){
       isEven = false;
       return isEven;

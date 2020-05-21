@@ -9,14 +9,15 @@ int main(){
 
   stringstream parse(line);
 
-    while(getline(parse, token, '|')){
-      cout << token << endl;
-      output += token += ", ";
-    }
+  while(getline(parse,token, '|')){
+    cout << token << endl;
+    output += token +", ";
+  }
 
   ofstream fout("output.txt");
     fout << output;
     fout.close();
+
 
       return 0;
 }

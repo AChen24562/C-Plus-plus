@@ -25,9 +25,9 @@ const int col =3;
 
 int main(){
 
-  int array[row][col];
+  int array[row][col] = {{3,2,4}, {4,5,6}, {3,2,5}};
 
-  populate(array);
+  //populate(array);
   display(array);
 
 

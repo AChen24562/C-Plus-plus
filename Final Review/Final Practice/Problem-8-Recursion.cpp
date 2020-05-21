@@ -27,6 +27,7 @@ void writeInRows(int n){
 
 
 void numDigits(int n, int digits){
+
   if(n<10) {
     digits+=1;
     cout << digits;
