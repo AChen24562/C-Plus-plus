@@ -37,7 +37,7 @@ int main(){
   populate(array);
   output(array);
 
-cout << sum(array, row);
+cout << sum(array, 1);
 
     return 0;
 }
