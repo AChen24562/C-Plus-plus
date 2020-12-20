@@ -8,7 +8,7 @@ int main(){
 
 // #1
 string exam = "ET575ExamOne";
-cout << "#1" << endl <<exam << endl;
+cout << "#1" << endl <<exam << endl <<endl;
 
 // #2
 string greeting = "Hello Wednesday";
