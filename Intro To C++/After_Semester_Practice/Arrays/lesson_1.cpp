@@ -5,17 +5,17 @@
 
 using namespace std;
 
+void populate_ar(int array[], const int SIZE){
+  for(int i = 0; i < SIZE; i ++){
+    array[i] = i;
+  }
+}
+
 int main(){
   const int SIZE = 10;
   int array[SIZE];
 
-  for(int i = 0; i < SIZE; i ++){
-    array[i] = i;
-  }
-
-  for(int i =0; i < SIZE; i ++){
-    cout << array[i] << " ";
-  }
+  populate_ar(array, SIZE);
 
 
 
