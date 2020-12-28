@@ -42,6 +42,12 @@ int getIndex(const int array[], const int size, int element){
   return -1;
 }
 
+void check_element(int array[], const int SIZE, int element){
+  int index = getIndex(array, SIZE, element);
+  if(index < 0){
+    cout << endl << "Invalid elment" << endl;
+  }
+}
 
 int main(){
 
@@ -59,7 +65,7 @@ int main(){
 
   int element = 3;
   cout << endl << "Index of " << element << " is " << getIndex(array, SIZE, element);
-
+  check_element(array, SIZE, 6);
 
   return 0;
 
