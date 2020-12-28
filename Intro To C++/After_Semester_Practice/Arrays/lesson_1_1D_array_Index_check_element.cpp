@@ -10,7 +10,7 @@ void populate_ar(int array[], const int SIZE){
   for(int i = 0; i < SIZE; i ++){
     array[i] = i;
   }
-}
+}as
 
 // Displaying array
 void display(int array[], const int SIZE){
