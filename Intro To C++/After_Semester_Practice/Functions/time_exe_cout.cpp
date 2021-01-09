@@ -16,11 +16,12 @@ int main(){
 
 
   auto stop = high_resolution_clock::now(); // Stop Clock
+    // Subtract start and end ctimeauto duration = duration_cast<microseconds>(stop - start);
 
-  // Subtract start and end time
   auto duration = duration_cast<microseconds>(stop - start);
+    cout << "Time taken by function: "
+    << duration.count() << " microseconds" << endl;
+    return 0;
 
-  cout << "Time taken by function: "
-       << duration.count() << " microseconds" << endl;
-       return 0;
+
 }
