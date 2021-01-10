@@ -22,15 +22,19 @@ int main(){
   int i = 234;
   cout << i % 10 << endl;
 
-  string phrase;
-  cout << "Enter a five letter word: ";
-  cin >> phrase;
-  cout << phrase.size();
+  string phrase = "asdfg";
+  // cout << "Enter a five letter word: ";
+  cout << "Original Phrase: " << phrase<< endl;
+
+  //cin >> phrase;
   if (phrase.size() == 5){
-    char temp = phrase[-1];
-    phrase[-1] =  phrase[0];
-    phrase[0] = temp;
-    cout << phrase;
+    char temp = phrase[0];
+    phrase[0] = phrase[4];
+    phrase[4] = temp;
+
+
+    cout << "The Word is: " << phrase << endl << phrase[0];
+    cout << endl << temp;
   }
   else{
     cout << "\"" << phrase << "\"" << " is not a 5 letter word";
