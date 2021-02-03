@@ -33,8 +33,7 @@ int main(){
     phrase[4] = temp;
 
 
-    cout << "The Word is: " << phrase << endl << phrase[0];
-    cout << endl << temp;
+    cout << "The Word is: " << phrase << endl;
   }
   else{
     cout << "\"" << phrase << "\"" << " is not a 5 letter word";
