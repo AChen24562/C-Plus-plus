@@ -25,7 +25,7 @@ also output in the same function
 void append(int array[], const int CAP, int &size, int value){
   if(size < CAP){
     array[size] = value;
-    ++ size;
+    ++size;
   }
   for(int i=0; i<size; i++) {
       cout << array[i] << " ";
@@ -36,24 +36,21 @@ void append(int array[], const int CAP, int &size, int value){
 int main(){
 
 const int CAP = 10;
-int size = 0;
+int size = 8;
 
 int array[CAP] = {10, 20, 30, 40, 50,60,70, 80};
 
-for(int i=0; i<CAP; i++) {
-  if(array[i] == 0){ // For the beginning when there are empty indexes
-    break;
-  }
+for(int i=0; i<size; i++) {
     cout << array[i] << " ";
-    size ++;
 }
+
 cout << endl;
 append(array, CAP, size, 90);
 cout << endl;
 append(array, CAP, size, 95);
 cout << endl;
 append(array, CAP, size, 100); // should not print
-cout << endl;
+cout << endl << size;
   return 0;
 
 }
