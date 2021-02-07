@@ -14,6 +14,7 @@ void iterative_print(int array[], const int CAP){
   }
 }
 
+// Linear Time Function
 /*
 Recursively print backwards
 Base Case: when size = 0

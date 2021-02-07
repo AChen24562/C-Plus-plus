@@ -2,35 +2,35 @@
 
 using namespace std;
 
-/* recurse_print(10) print 10
-    ...
-      ...
-      recurse_print(1) print 1
-    recurse_print(2)
-  ...
-recurse_print(10)
+// Linear Time Function
+
+// Steps:
+// Take an input
+// Base case: of input == 1, output 1
+// Recursive Action: print current input and function(input - 1), until input is 1
+
+// Trace
+/* Input into function 10
+10 does not equal 1, therefore, print current input stored, called the same function
+but with the input -1.
+Continue until input is 1
 */
-// Linear Recursive Function
-void recurse_print(int n){
-  if(n ==1){
-    cout << n << " ";
+void countdown(int num){
+  if(num ==1){
+    cout << num;
     return;
   }
   else{
-    cout << n << " ";
-    recurse_print(n -1);
+    cout << num << " ";
+    countdown(num -1);
   }
 }
 
 
-
-
 int main(){
 
-  int n = 10;
-  recurse_print(n);
+  int num = 5;
+  countdown(num);
 
-
-    return 0;
-
+  return 0;
 }

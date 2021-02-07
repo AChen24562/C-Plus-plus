@@ -2,10 +2,12 @@
 
 using namespace std;
 
+// Quadratic Time
 void print(int array[], const int size){
   for(int i =0; i<size; i++){
     cout << array[i] << " ";
   }
+  cout << endl;
 }
 
 void sorted_insert(int array[], const int CAP, int &size, int value){
@@ -30,21 +32,24 @@ void sorted_insert(int array[], const int CAP, int &size, int value){
     }
 
   }
+  else{
+    cout << endl << endl << "Exceeded" << endl;
+  }
 }
 
 int main(){
 
-  const int CAP = 15;
-  int size = 8;
+  const int CAP = 13;
+  int size = 10;
 
-  int array[CAP] = {10, 20, 30, 40, 50,60,70, 80};
+  int array[CAP] = {10, 20, 30, 40, 50,60,70, 80,90,100};
   print(array, size);
 
   cout << endl;
-  sorted_insert(array, CAP, size, 100);
+  sorted_insert(array, CAP, size, 105);
   print(array, size);
   cout <<endl;
-  sorted_insert(array, CAP, size, 55);
+  sorted_insert(array, CAP, size, 1);
   print(array, size);
   cout <<endl;
   sorted_insert(array, CAP, size, 25);
