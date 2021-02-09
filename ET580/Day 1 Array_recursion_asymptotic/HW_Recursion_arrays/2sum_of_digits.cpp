@@ -4,8 +4,12 @@
 #include <ctime>
 
 using namespace std;
-// Steps
-// Base: when input < 10 complete and return + input
+
+// Logarithmic function
+// BEGINNING TO THINK ITS LINEAR
+
+// Steps:
+// Base CASE: when input < 10 complete and return + input
 /* Recursive Act: store the last digit and call another instance of
 the same function but with the input /10, once complete retun the
 sum of each previous return
@@ -13,13 +17,11 @@ sum of each previous return
 
 //Trace
 /*
-sumdigits(345)  Store 5
-  sumdigits(34) Store 4
-    sumdigits(3)
-    sumdigits(3) + 4 return 7
-  sumdigits(7) + 5 return 12
-
-
+// sum_digits(123)
+  // sum_digits(12)
+    // sum_digits(1) return 3
+  // sum_digits(12) return 3 + 2
+// sum_digits(123) return 3 + 2 + 1
 */
 int sumdigits(int num){
   if(num < 10){

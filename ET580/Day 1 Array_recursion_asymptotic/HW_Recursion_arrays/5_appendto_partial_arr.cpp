@@ -5,6 +5,8 @@
 
 using namespace std;
 
+// Constant Time Function
+
 /*
 Explaination:
 Create array with cap = 10

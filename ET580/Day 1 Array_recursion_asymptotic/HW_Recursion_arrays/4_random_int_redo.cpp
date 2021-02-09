@@ -2,6 +2,19 @@
 #include <ctime>
 #include <bits/stdc++.h>
 
+/* Quadratic Time, as the CAP increases, or the
+size of the array increases the longer it will take in the end
+to find a unique integer that fits. at the end it needs to
+generate numbers that fit a pool of  1/size.
+*/
+/* Iterate from 0 to Size of array
+  Every iteration creates a new random int and assigns it to current index of array
+
+  if the index is not 0, run through the whole array again with in inner loop
+  inner loop looks through array and if an index has the same value as generated int
+  decrement outer loop by 1 and break
+*/
+
 using namespace std;
 void fill_array(int array[], int CAP){
   srand(time(NULL));
