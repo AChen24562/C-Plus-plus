@@ -21,7 +21,7 @@ for(int i =0; i < size; ){
 int random_value = rand() % size + 1;
 bool unique = true;
 
-  for(int j = 0; j <size; ++j){
+  for(int j = 0; j <i; ++j){
     if(random_value == array[j]){
       unique = false;
       break;
