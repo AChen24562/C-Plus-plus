@@ -19,6 +19,8 @@ int main() {
     cout << endl;
 
     Course c1{};
+    // Function a member in a class: calling object
+    
     c1.setName("ET580");            // member functions require a calling object
     c1.output();                    // member functions require a calling object
 

@@ -17,7 +17,7 @@ public:
     string getName() { return name; }
     string getProfessor() { return professor; }
 
-    // mutators - used to modify an object
+    // mutators - used to modify an object or setters
     void setName(string n) { name = n; }
     void setProfessor(string p) { professor = p; }
 
