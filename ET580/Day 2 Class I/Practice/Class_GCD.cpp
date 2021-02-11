@@ -2,15 +2,27 @@
 
 using namespace std;
 class Rational{
-public:
+private:
   int numerator;
   int denominator;
-
+public:
   int getnumerator();
   int getdenominator();
 
   void setnumerator(int num);
   void setdenominator(int denom);
+
+  int getgcd(){
+
+    int gcd = 0;
+
+    for(int i =1; i<denominator; i ++){
+      if(numerator % i ==0 && denominator %i ==0){
+        gcd = i;
+      }
+    }
+    return gcd;
+  }
 };
 
 int Rational::getnumerator() {return numerator;}
@@ -24,29 +36,17 @@ void display(Rational &r){
   cout << r.numerator <<"/" <<r.denominator << endl;
 }
 
-int getgcd(int numer, int denom)
+int outgcd(int numer, int denom)
 {
     if (denom == 0){
       return numer;
     }
     else{
-      return getgcd(denom, numer % denom);
+      return outgcd(denom, numer % denom);
     }
 
 }
-/*
-    // Everything divides 0
-    if (a == 0)
-       return b;
-    if (b == 0)
-       return a;
-    // base case
-    if (a == b)
-        return a;
-    // a is greater
-    if (a > b)
-        return getgcd(a-b, b);
-    return getgcd(a, b-a);*/
+
 
 
 int main(){
@@ -61,9 +61,12 @@ int main(){
 
   int numer = nd.getnumerator();
   int denom = nd.getdenominator();
+  /*
+  int gcd = outgcd(numer, denom);
+  cout << gcd;*/
 
-  int gcd = getgcd(numer, denom);
-  cout << gcd;
+  cout << nd.getgcd();
+  cout << endl << nd.getnumerator() << endl <<nd.getdenominator();
   return 0;
 
 
