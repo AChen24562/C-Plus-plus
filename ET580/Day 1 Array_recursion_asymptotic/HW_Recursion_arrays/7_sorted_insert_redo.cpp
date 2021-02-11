@@ -18,15 +18,15 @@ void sorted_insert(int array[], const int CAP, int &size, int value){
     }
     else{  // if not do this
       for(int i=0; i<size; i++){ // Start from the first index
-    if(value<array[i]){  // once the loop goes to an index above the value of our desired value
-        for(int j=size; j>i; j--){ // move all index values to the right, starting with the one
+        if(value<array[i]){  // once the loop goes to an index above the value of our desired value
+          for(int j=size; j>i; j--){ // move all index values to the right, starting with the one
                                   // that triggered the loop
-          array[j]=array[j-1];
+            array[j]=array[j-1];
         }
 
-     array[i]=value; // assign our value to the new open index
-     size++; // increment size and break
-     break;
+          array[i]=value; // assign our value to the new open index
+          size++; // increment size and break
+          break;
         }
       }
     }
