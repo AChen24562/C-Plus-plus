@@ -47,7 +47,7 @@ void sorted_insert(int array[], int &size, const int CAP, int value){
 }
 }
 int main(){
-  int CAP =10;
+  const int CAP =10;
   int size =5;
 
   int array[CAP] = {10, 20, 30, 40, 50};

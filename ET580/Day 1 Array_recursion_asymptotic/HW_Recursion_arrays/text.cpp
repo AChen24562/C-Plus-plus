@@ -9,7 +9,7 @@ void swap(int array[], int size){
     if(array[i] > max){
       max = i;
     for(int j =0; j <size; j++){
-      if(min > array[j]){
+      if(min >= array[j]){
         min = j;
       }
     }
@@ -26,11 +26,13 @@ void swap(int array[], int size){
 
 
 int main(){
-  int size = 7;
-  int array[size] = {6, 9, 4,2,7,10,5};
+  const int CAP =10;
+  int size = 3;
+  int array[CAP] = {1, 2, 3};
+
   swap(array, size);
 
-    return 0;
+  return 0;
 
 
 }
