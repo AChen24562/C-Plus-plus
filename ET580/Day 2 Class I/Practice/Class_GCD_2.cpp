@@ -27,7 +27,7 @@ void Rational::setdenominator(int denom) {denominator = denom;}
 int Rational::getgcd(){
   return gcdRec(numerator, denominator);
 }
-
+// Wrapped
 int Rational::gcdRec(int n, int d){ // Uses seperate copies of the variable
   if(d == 0)
     return n;
