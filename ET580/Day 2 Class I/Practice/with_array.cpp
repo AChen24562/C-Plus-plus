@@ -24,7 +24,7 @@ public:
     void setHours(int h);
 
     void display();
-    void 
+
 };
 
 // Externally Defined
@@ -51,7 +51,28 @@ float amountWeek(Work &w){
   return pay * hours;
 }
 
+void addEmp(Work array[], const int CAP, int &size, string n, float pay, int h){
+  if(size < CAP){
+    Work w{};
+    w.setName(n);
+    w.setPay(pay);
+    w.setHours(h);
+    array[size] = w;
+    size ++;
+  }
+}
+
+void printArr(Work array[], const int size){
+  for(int i = 0; i < size; i++){
+    cout << "Name: " << array[i].getName() << endl;
+    cout <<"Pay: "<<array[i].getPay() << endl;
+    cout <<"Hours: " << array[i].getHours()<<endl;
+    cout <<"Weekly Pay: $"<<amountWeek(array[i])<<endl <<endl;
+  }
+}
+
 int main(){
+  /*
   Work w1{};
   w1.setName("Bill");
   w1.setPay(15.73);
@@ -59,6 +80,15 @@ int main(){
 
   w1.display();
   cout << endl << endl <<"Bill: $"<< amountWeek(w1);
+*/
+  const int CAP = 10;
+  int size = 0;
+  Work array[CAP];
 
+  addEmp(array, CAP, size, "Bill", 15.50, 20);
+  addEmp(array, CAP, size, "Jim", 20.10, 20);
+  printArr(array, size);
+
+  
   return 0;
 }
