@@ -3,6 +3,11 @@
 using namespace std;
 
 void swap(int array[], int size){
+  cout << "Original: ";
+  for(int i =0; i <size; i++){
+    cout << array[i] << " ";
+    }
+  cout << endl;
   int max = array[0];
   int min = array[0];
   for(int i =1; i<size; i ++){
@@ -15,7 +20,7 @@ void swap(int array[], int size){
     }
     }
   }
-  cout << min << endl << max << endl;
+
   int temp = array[min];
   array[min] = array[max];
   array[max] = temp;
@@ -27,8 +32,8 @@ void swap(int array[], int size){
 
 int main(){
   const int CAP =10;
-  int size = 3;
-  int array[CAP] = {1, 2, 3};
+  int size = 4;
+  int array[CAP] = {1, 4,2,10};
 
   swap(array, size);
 

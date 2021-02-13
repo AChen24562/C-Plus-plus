@@ -6,7 +6,7 @@ private:
   string name;
   float pay;
   int hours;
-  float WeeklyPay(int hours, float pay){
+  float WeeklyPay(int hours, float pay){ // Wrapped calls new copies
     return hours *pay;
   }
 
@@ -25,10 +25,10 @@ public:
   float getPay(){return pay;}
   int getHours(){return hours;}
 
-  float getWeekPay(){
+  float getWeekPay(){ // Wrapper Function
     return WeeklyPay(hours, pay);
   }
-  
+
 };
 int main(){
   Work w1{};

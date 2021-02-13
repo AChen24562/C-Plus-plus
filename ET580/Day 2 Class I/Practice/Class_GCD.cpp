@@ -13,11 +13,11 @@ public:
   void setdenominator(int denom);
 
   int getgcd(){
-
+    int n = numerator, d = denominator;
     int gcd = 0;
 
-    for(int i =1; i<denominator; i ++){
-      if(numerator % i ==0 && denominator %i ==0){
+    for(int i =1; i<d; i ++){
+      if(n % i ==0 && d %i ==0){
         gcd = i;
       }
     }
@@ -33,7 +33,7 @@ void Rational::setdenominator(int denom) {denominator = denom;}
 
 
 void display(Rational &r){
-  cout << r.numerator <<"/" <<r.denominator << endl;
+  cout << r.getnumerator() <<"/" <<r.getdenominator() << endl;
 }
 
 int outgcd(int numer, int denom)
@@ -59,13 +59,13 @@ int main(){
   nd.setnumerator(40);
   nd.setdenominator(24);
 
-  int numer = nd.getnumerator();
-  int denom = nd.getdenominator();
+  //int numer = nd.getnumerator();
+  //int denom = nd.getdenominator();
   /*
   int gcd = outgcd(numer, denom);
   cout << gcd;*/
 
-  cout << nd.getgcd();
+  cout << "gcd: " << nd.getgcd();
   cout << endl << nd.getnumerator() << endl <<nd.getdenominator();
   return 0;
 
