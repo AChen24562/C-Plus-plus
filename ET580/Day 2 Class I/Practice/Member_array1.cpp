@@ -48,7 +48,6 @@ void viewArray(Work array[], const int size){
 }
 
 void viewPay(Work array[], const int size){
-  Work w11{};
   for(int i =0; i <size; i++){
     if(array[i].getName() == "Bill"){
       cout << "Bill's Pay: " << array[i].getWeekPay();
