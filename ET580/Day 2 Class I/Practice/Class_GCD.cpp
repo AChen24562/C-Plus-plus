@@ -16,7 +16,7 @@ public:
     int n = numerator, d = denominator;
     int gcd = 0;
 
-    for(int i =1; i<d; i ++){
+    for(int i =1; i<=d; i ++){
       if(n % i ==0 && d %i ==0){
         gcd = i;
       }
