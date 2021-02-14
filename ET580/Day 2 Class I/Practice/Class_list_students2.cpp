@@ -97,5 +97,10 @@ int main(){
   addStudent(array, CAP, size, "Edward", 24, 66);
 
   display_array(array, size);
+  Student s1{};
+  s1.setExam1(75);
+  s1.setExam2(75);
+
+  cout << endl <<s1.getGrade();
   return 0;
 }
