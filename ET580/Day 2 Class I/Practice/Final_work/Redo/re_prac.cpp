@@ -25,7 +25,7 @@ void Rational::setDen(int d){den = d;}
 int Rational::getNum(){return num;}
 int Rational::getDen(){return den;}
 
-int Rational::memberGCDIter(){
+int Rational::memberGCDIter(){ // Member function that iteratatively gets GCD
   int n= num, d = den;
   int gcd =0;
 
@@ -36,10 +36,16 @@ int Rational::memberGCDIter(){
   }
   return gcd;
 }
+
+// public member function that calls private recursive function
+// calls private data members
+// Wrapper function
 int Rational::getGCDRec(){
   return gcdRec(num , den);
 }
 
+// private recursive function that recursively gets GCD
+// Wraped
 int Rational::gcdRec(int n, int d){
   if(d ==0){
     return n;
@@ -54,7 +60,7 @@ void displayFrac(Rational &r){
   cout <<endl<< r.getNum() << "/" << r.getDen() << endl;
 }
 
-int extGCD(int n, int d){
+int extGCD(int n, int d){ // Non member recursive GCD function
   if(d == 0){
     return n;
   }
