@@ -12,6 +12,12 @@ private:
   }
 
 public:
+  // Constructor
+  Student(){
+    name = "Unknown";
+    exam1 = 0;
+    exam2=0;
+  }
   void setName(string n);
   void setExam1(int e1);
   void setExam2(int e2);
@@ -49,13 +55,23 @@ char Student::getGrade(){
 }
 // End of Externally Defined
 
+void display(Student &s){
+  cout << s.getName() <<endl << "Exam1: "<< s.getExam1() <<endl << "Exam2: "
+    << s.getExam2() <<endl << "Grade: ";
+  cout  <<s.getGrade() << endl  <<endl;
+}
+
 int main(){
   Student s1{};
+  // Displays the constructor
+  display(s1);
+
   s1.setName("Alvin");
   s1.setExam1(75);
   s1.setExam2(75);
 
-  cout << s1.getName() <<endl << "Exam1: "<< s1.getExam1() <<endl << "Exam2: "
+  display(s1);
+  cout  <<s1.getName() <<endl << "Exam1: "<< s1.getExam1() <<endl << "Exam2: "
     << s1.getExam2() <<endl << "Grade: ";
   cout  <<s1.getGrade() << endl;
 

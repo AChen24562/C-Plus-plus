@@ -7,11 +7,18 @@ private:
   string name;
   int exam1;
   int exam2;
-  float calcGPA(){
+  float calcGPA(){ // Wrapped
     return (exam1+exam2)/2;
   }
 
 public:
+  // Constructor
+  Student(){
+    name = "Unknown";
+    exam1 = 0;
+    exam2=0;
+  }
+
   void setName(string n);
   void setExam1(int e1);
   void setExam2(int e2);
@@ -31,6 +38,7 @@ string Student::getName(){return name;}
 int Student::getExam1(){return exam1;}
 int Student::getExam2(){return exam2;}
 
+// Wrapper that calls private function
 char Student::getGrade(){
   float grade = calcGPA();
   if(grade >= 90){
@@ -77,6 +85,7 @@ int main(){
     << s1.getExam2() <<endl << "Grade: ";
   cout  <<s1.getGrade() << endl;
 
+// create array with type Student
   const int CAP = 10;
   int size =0;
   Student students[CAP];
