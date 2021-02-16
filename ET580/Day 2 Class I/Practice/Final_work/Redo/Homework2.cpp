@@ -7,9 +7,8 @@ private:
   string name;
   int exam1;
   int exam2;
-  float calcGPA(){ // Wrapped
-    return (exam1+exam2)/2;
-  }
+  float calcGPA(); // Private Wrapped
+
 
 public:
   // Constructor
@@ -37,6 +36,10 @@ void Student::setExam2(int e2) {exam2 = e2;}
 string Student::getName(){return name;}
 int Student::getExam1(){return exam1;}
 int Student::getExam2(){return exam2;}
+
+float Student::calcGPA(){
+  return (exam1 + exam2)/2;
+}
 
 // Wrapper that calls private function
 char Student::getGrade(){

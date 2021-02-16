@@ -7,36 +7,36 @@ private:
   string name;
   int exam1;
   int exam2;
-  float calcGPA(){
-    return (exam1+exam2)/2;
-  }
+  float calcGPA();
 
 public:
-  // Constructor
   Student(){
     name = "Unknown";
     exam1 = 0;
-    exam2=0;
+    exam2 = 0;
   }
-  void setName(string n);
-  void setExam1(int e1);
-  void setExam2(int e2);
+// Accessors
+string getName();
+int getExam1();
+int getExam2();
+// Mutators
+void setName(string n);
+void setExam1(int e1);
+void setExam2(int e2);
 
-  string getName();
-  int getExam1();
-  int getExam2();
+char getGrade();
 
-  char getGrade();
 };
 // Externally Defined
-void Student::setName(string n){name = n;}
-void Student::setExam1(int e1) {exam1 = e1;}
-void Student::setExam2(int e2) {exam2 = e2;}
-
 string Student::getName(){return name;}
 int Student::getExam1(){return exam1;}
 int Student::getExam2(){return exam2;}
+// Mutators
+void Student::setName(string n){name = n;}
+void Student::setExam1(int e1){exam1 = e1;}
+void Student::setExam2(int e2){exam2 = e2;}
 
+float Student::calcGPA(){return (exam1 + exam2)/2;} // Private Wraped function
 char Student::getGrade(){
   float grade = calcGPA();
   if(grade >= 90){
@@ -53,27 +53,25 @@ char Student::getGrade(){
   }
   return 'F';
 }
-// End of Externally Defined
 
-void display(Student &s){
-  cout << s.getName() <<endl << "Exam1: "<< s.getExam1() <<endl << "Exam2: "
-    << s.getExam2() <<endl << "Grade: ";
-  cout  <<s.getGrade() << endl  <<endl;
-}
+
+// End of externally defined
 
 int main(){
-  Student s1{};
-  // Displays the constructor
-  display(s1);
+  Student s1;
+  cout << s1.getName() << endl
+      << s1.getExam1() << endl
+      << s1.getExam2() << endl
+      << s1.getGrade() << endl << endl;
 
-  s1.setName("Alvin");
-  s1.setExam1(75);
-  s1.setExam2(75);
+  s1.setName("Dan");
+  s1.setExam1(80);
+  s1.setExam2(85);
+  cout << s1.getName() << endl
+      << s1.getExam1() << endl
+      << s1.getExam2() << endl
+      << s1.getGrade() << endl;
 
-  display(s1);
-  cout  <<s1.getName() <<endl << "Exam1: "<< s1.getExam1() <<endl << "Exam2: "
-    << s1.getExam2() <<endl << "Grade: ";
-  cout  <<s1.getGrade() << endl;
 
   return 0;
 
