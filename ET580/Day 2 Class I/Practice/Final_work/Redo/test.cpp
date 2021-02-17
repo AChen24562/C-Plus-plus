@@ -18,6 +18,7 @@ string Actor::getName(){return name;}
 
 int main(){
 Actor a;
+a.name.('jim');
 cout << a.getName();
 
 

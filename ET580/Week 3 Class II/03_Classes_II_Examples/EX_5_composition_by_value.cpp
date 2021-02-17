@@ -22,6 +22,8 @@ public:
     Course(): number(0), prof() { }                         // prof() calls Professor default constructor
     Course(int n): number(n), prof() { }                    // prof() calls Professor default constructor
     Course(int n, string p): number(n), prof(p) { }         // prof(p) calls Professor one-parameter constructor
+
+    // Copy constructor
     Course(int n, Professor &o): number(n), prof(o) { }     // Professor object is COPIED BY VALUE to prof
     int getNumber() const { return number; }
     string getProfessor() const { return prof.getName(); }  // call the Professor name accessor

@@ -21,7 +21,7 @@ int main() {
     cout << endl;
 
     // construct a temporary object
-    Course{};
+    Course{}; // Anon object: temp. object cannot be access after line 24
 
     // function that returns by value, returns a temporary object
     f1();
