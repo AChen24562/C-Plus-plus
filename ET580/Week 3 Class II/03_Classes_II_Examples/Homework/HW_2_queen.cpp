@@ -28,6 +28,10 @@ bool isSafe(const int array[], const int CAP){
 
       }
       else{
+        // How to check diagonals: If there is a queen on the same diagonal
+        // then the distance from one queen to the next will have the same shift
+        //in row as it does in column
+        // 1 column 1 row, 2 col 2 rows, etc
         if(abs(j-i) == abs(array[j]-array[i])){ // check for diagonal queens
         return false;
         }
