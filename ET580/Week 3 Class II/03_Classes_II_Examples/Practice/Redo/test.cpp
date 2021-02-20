@@ -1,6 +1,6 @@
 #include <iostream>
-using namespace std;
 
+using namespace std;
 
 class Person{
 private:
@@ -8,22 +8,34 @@ private:
   int age;
 
 public:
-  Person(): Person("noName", 0){}
-  Person(string n, int a): name(n), age(a){}
+  Person();
+  Person(string n, int a);
 
   // Accessors
-  string getName(){return name;}
-  int getAge(){return age;}
-};
+  string getName();
+  int getAge();
+  // Mutators
+  void setName(string n);
+  void setAge(int a);
 
+};
+// External, out of line
+Person::Person(): Person("Noname",0){}
+Person::Person(string n, int a):name(n), age(a){}
+
+// Accessors
+string Person::getName(){return name;}
+int Person::getAge(){return age;}
+// Mutators
+void Person::setName(string n){name =n;}
+void Person::setAge(int a){age = a;}
 
 
 int main(){
   Person p1{};
   cout << p1.getName() <<" " << p1.getAge() << endl;
 
-  Person p2{"Donald Duck", 100};
-  cout << p2.getName() <<" " << p2.getAge() << endl;
+
 
 
   return 0;
