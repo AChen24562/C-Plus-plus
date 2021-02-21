@@ -12,7 +12,7 @@ public:
         ++num;
         return *this;
     }
-    // postfix overload c++
+    // postfix overload c++, with int in the parameter
     Number operator++(int) {
         Number temp{num};     // copy calling object
         ++num;                // increment calling object
