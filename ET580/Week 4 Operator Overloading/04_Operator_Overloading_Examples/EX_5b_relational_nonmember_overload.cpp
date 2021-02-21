@@ -8,6 +8,9 @@ public:
     Number(double n): num(n) { }
     double getNumber() const { return num; }      // required for non-member read only overloads
     void output() const { cout << num << endl; }
+
+    // friend function
+    friend bool operator>(const Number &lhs, const Number &rhs);
 private:
     double num;
 };
@@ -15,8 +18,14 @@ private:
 // binary relational non-member operator overload (==,!=,<,>,<=,>=)
 // two parameters, one for each operand, left hand side is first, right hand side second
 bool operator>(const Number &lhs, const Number &rhs) {
+    return (lhs.num > rhs.num); 
+}
+
+/*Without friend declaration
+bool operator>(const Number &lhs, const Number &rhs) {
     return (lhs.getNumber() > rhs.getNumber()); // accessor required to access data
 }
+*/
 
 int main() {
     cout << endl;
