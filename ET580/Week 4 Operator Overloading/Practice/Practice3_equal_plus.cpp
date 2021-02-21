@@ -20,31 +20,9 @@ public:
 // end of constructor
 
 // Overload
-// - Overload
-Money operator-()const{
-  return Money(-dollars, -cents);
-}
-
-// [] Overload
-int& operator[](int index){
-  assert(index >= 0 && index <=1);
-  if(index == 0){
-    return dollars;
-  }
-  else{
-    return cents;
-  }
-}
-
-const int& operator[](int index)const{
-  assert(index >= 0 && index <=1);
-  if(index == 0){
-    return dollars;
-  }
-  else{
-    return cents;
-  }
-}
+// == Overload
+friend bool operator==(const Money &lhs, const Money &rhs);
+friend Money operator+(const Money &lhs, const Money &rhs);
 
 
 //End of overload
@@ -85,17 +63,26 @@ void display()const{
 }
 
 };
+// friend member
+bool operator==(const Money &lhs, const Money &rhs){
+  return (lhs.dollars == rhs.dollars && lhs.cents == rhs.cents);
+}
+
+Money operator+(const Money &lhs, const Money &rhs){
+  return Money((lhs.dollars + rhs.dollars), (lhs.cents+ rhs.cents));
+}
 int main(){
-  Money  m1{-5, -5};
+  Money m1{2, 50};
   m1.display();
 
-  (-m1).display();
-
-  Money  m2{2, 5};
+  Money m2{2, 50};
   m2.display();
-  (-m2).display();
 
-  m2.display();
+  cout << (m1 == m2) << endl << endl;
+
+  (m1+m2).display();
+
+  (10 + m1 + m2).display()
   return 0;
 
 
