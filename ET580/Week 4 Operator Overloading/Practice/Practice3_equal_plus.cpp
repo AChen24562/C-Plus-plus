@@ -43,12 +43,12 @@ void setCents(int c){
 // display
 void display()const{
   if(dollars < 0|| cents <0){
-    if(cents <10){
+    if(abs(cents) <10){
       cout << "-$" << -dollars << ".0" << -cents << endl << endl;
       return;
     }
     else{
-      cout << "-$" << -dollars  << -cents << endl << endl;
+      cout << "-$" << -dollars  << "."<<-cents << endl << endl;
       return;
     }
   }
@@ -82,7 +82,7 @@ int main(){
 
   (m1+m2).display();
 
-  (10 + m1 + m2).display()
+  (10 + m1 + m2).display();
   return 0;
 
 

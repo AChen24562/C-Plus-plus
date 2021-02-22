@@ -46,8 +46,8 @@ void display(Rational &r){
 int main(){
   Rational r1{};
 
-  r1.setNum(40);
-  r1.setDen(24);
+  r1.setNum(3);
+  r1.setDen(5);
   display(r1);
   cout << r1.getGCD();
 
