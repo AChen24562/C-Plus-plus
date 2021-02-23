@@ -1,5 +1,6 @@
 // operator_overloading_hw2 - S. Trowbridge
 #include <iostream>
+#include<cassert>
 using namespace std;
 
 class RatNum{
@@ -53,7 +54,23 @@ friend RatNum operator*(const RatNum &lhs, const RatNum &rhs);
 
 // Relation
 friend bool operator==(const RatNum &lhs, const RatNum rhs);
+friend bool operator!=(const RatNum &lhs, const RatNum rhs);
+friend bool operator>(const RatNum &lhs, const RatNum rhs);
+friend bool operator<(const RatNum &lhs, const RatNum rhs);
 
+
+// Subscript []
+int& operator[](int index){
+  assert(index == 1 || index == 2);
+  if(index == 1){
+    return num;
+  }
+  else{
+    return den;
+  }
+}
+
+// Unary overload '-'
 RatNum operator-()const{
   return RatNum(-num, -den);
 }
@@ -98,11 +115,21 @@ RatNum operator/(const RatNum &lhs, const RatNum &rhs){
 // Relation
 bool operator==(const RatNum &lhs, const RatNum rhs){
   int lcm = RatNum::lcm(lhs.den, rhs.den);
-//  RatNum left = ((lcm/lhs.den)*lhs.num, lcm);
-//  RatNum right = ((lcm/rhs.den)*rhs.num, lcm);
 
   return ((lcm/lhs.den)*lhs.num == (lcm/rhs.den)*rhs.num);
 
+}
+bool operator!=(const RatNum &lhs, const RatNum rhs){
+  int lcm = RatNum::lcm(lhs.den, rhs.den);
+  return ((lcm/lhs.den)*lhs.num != (lcm/rhs.den)*rhs.num);
+}
+bool operator>(const RatNum &lhs, const RatNum rhs){
+  int lcm = RatNum::lcm(lhs.den, rhs.den);
+  return ((lcm/lhs.den)*lhs.num > (lcm/rhs.den)*rhs.num);
+}
+bool operator<(const RatNum &lhs, const RatNum rhs){
+  int lcm = RatNum::lcm(lhs.den, rhs.den);
+  return ((lcm/lhs.den)*lhs.num < (lcm/rhs.den)*rhs.num);
 }
 
 int main() {
@@ -113,7 +140,7 @@ int main() {
     // test operator overloads
     cout << "\nInput/Output Stream Operators: " << endl;
 
-    //RatNum r4;
+    RatNum r4;
     //cout << "Enter a rational number: ";
     //cin >> r4;
     //cout << r4 << endl;
@@ -140,15 +167,16 @@ int main() {
     // test relational operator overload
     cout << "\nRelational Operators: " << endl;
     cout << r5 << " == " << r6 << "? " << (r5==r6) << endl;
-    RatNum r11{3, 7};
-    cout << (r1 == r11);
-  //  cout << r5 << " != " << r6 << "? " << (r5!=r6) << endl;
-  //  cout << r5 << " > " << r6 << "? " << (r5>r6) << endl;
-  //  cout << r5 << " < " << r6 << "? " << (r5<r6) << endl;
+    RatNum r12{8, 12};
+    cout << "Test: " << r12 << "==" << r5 << "?   "<< (r5 == r12)<<endl;
+    cout << r5 << " != " << r6 << "? " << (r5!=r6) << endl;
+    cout << r5 << " > " << r6 << "? " << (r5>r6) << endl;
+    cout << r5 << " < " << r6 << "? " << (r5<r6) << endl;
+
 
     // test subscript overload
-  //  cout << "\nSubscript Operator: " << endl;
-  //  cout << r5 << " num=" << r5[1] << " den=" << r5[2] << endl;
-  //  cout << endl;
+    cout << "\nSubscript Operator: " << endl;
+    cout << r5 << " num=" << r5[1] << " den=" << r5[2] << endl;
+    cout << endl;
     return 0;
 }
