@@ -12,6 +12,8 @@ public:
     // *this is another name for the calling object, which is returned by reference
     Number& operator+=(const Number &rhs) {
         num += rhs.num;
+
+        // Name for the calling object 'a'
         return *this;   // return the modified calling object (hence by reference)
     }
 
