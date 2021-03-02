@@ -56,6 +56,8 @@ public:
 
 
 int main(){
+  cout.setf(ios::fixed);
+  cout.precision(2);
   Student s1{};
   s1.display();
 
