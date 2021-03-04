@@ -9,6 +9,7 @@ public:
     void output() const { cout << num << endl; }
 
     // binary relational member operator overload (==,!=,<,>,<=,>=)
+    // MEMBER OVERLOAD: ONE PARAMETER: DECLARED INSIDE CLASS
     bool operator==(const Number &rhs) const {
         return num == rhs.num;          // return true or false
     }

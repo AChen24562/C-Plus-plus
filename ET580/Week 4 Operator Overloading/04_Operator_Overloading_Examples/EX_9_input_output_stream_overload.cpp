@@ -26,6 +26,7 @@ ostream& operator <<(ostream &out, const Number &n) {
 
 // istream object as a parameter, number object as a parameter
 istream& operator >>(istream &in, Number &n) {
+    // Could also just be in >> n.num;
     double value;
     in >> value;   // an extra step if one wishes to format data before storing
     n.num = value; // could all just be in >> n.num;
