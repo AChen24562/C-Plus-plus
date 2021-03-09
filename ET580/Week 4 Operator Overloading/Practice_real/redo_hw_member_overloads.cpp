@@ -45,10 +45,11 @@ friend ostream& operator<<(ostream& out, const RatNum& r);
 friend istream& operator>>(istream &in, RatNum& r);
 
 // Arithmetic Overload
-RatNum operator+(const RatNum& rhs) const{
-  int lcm = RatNum::lcm(den, rhs.den);
-  return RatNum((num*(lcm/den) + (rhs.num*(lcm/rhs.den))),lcm).reduce();
-}
+// RatNum operator+(const RatNum& rhs) const{
+//  int lcm = RatNum::lcm(den, rhs.den);
+//  return RatNum((num*(lcm/den) + (rhs.num*(lcm/rhs.den))),lcm).reduce();
+//}
+
 RatNum operator-(const RatNum& rhs)const {
   int lcm = RatNum::lcm(den, rhs.den);
   return RatNum((lcm/den)*num - (lcm/rhs.den)*rhs.num,lcm).reduce();
@@ -94,6 +95,13 @@ RatNum RatNum::operator-()const{
   return RatNum(-num, -den);
 }
 
+
+// TEST OF NON MEMBER ADDITION
+RatNum operator+(const RatNum& lhs, const RatNum& rhs){
+  int lcm = RatNum::lcm(lhs.getDen(), rhs.getDen());
+  return RatNum((lhs.getNum()*(lcm/lhs.getDen()) + (rhs.getNum()*(lcm/rhs.getDen()))),lcm).reduce();
+}
+
 // Friend out stream
 ostream& operator<<(ostream& out, const RatNum& r){
   if(r.num < 0 || r.den < 0){
@@ -113,6 +121,8 @@ istream& operator>>(istream &in, RatNum& r){
 
   return in;
 }
+
+
 int main(){
   //  cout << RatNum::gcd(10,20) << endl;
 
@@ -129,36 +139,37 @@ int main(){
   //cout << -r4 << endl;
 
     // test arithmetic overloads
+    cout << "\nTest: !" << endl;
    cout << "\nArithmetic Operators: " << endl;
     RatNum r5 = r1 + r2;
     cout << r1 << " + " << r2 <<  " = " << r5 << endl;
 
-    RatNum r6 = r1 - r2;
-    cout << r1 << " - " << r2 <<  " = " << r6 << endl;
-    RatNum r7 = r1 * r2;
-    cout << r1 << " * " << r2 <<  " = " << r7 << endl;
-    RatNum r8 = r1 / r2;
-    cout << r1 << " / " << r2 <<  " = " << r8 << endl;
+//    RatNum r6 = r1 - r2;
+//    cout << r1 << " - " << r2 <<  " = " << r6 << endl;
+//    RatNum r7 = r1 * r2;
+//    cout << r1 << " * " << r2 <<  " = " << r7 << endl;
+//    RatNum r8 = r1 / r2;
+//    cout << r1 << " / " << r2 <<  " = " << r8 << endl;
 
     // test arithmetic operation chaining
-    cout << "\nArithmetic Chaining: " << endl;
-    RatNum r9 = r5 + r6 - r7 * r8;
-    cout << r5 <<  " + " << r6 << " - " << r7 << " * " << r8 << " = " << r9 << endl;
+//    cout << "\nArithmetic Chaining: " << endl;
+//    RatNum r9 = r5 + r6 - r7 * r8;
+//    cout << r5 <<  " + " << r6 << " - " << r7 << " * " << r8 << " = " << r9 << endl;
 
     // test relational operator overload
-    cout << "\nRelational Operators: " << endl;
-    cout << r5 << " == " << r6 << "? " << (r5==r6) << endl;
-    RatNum r12{8, 12};
-    cout << "Test: " << r12 << "==" << r5 << "?   "<< (r5 == r12)<<endl;
-    cout << r5 << " != " << r6 << "? " << (r5!=r6) << endl;
-    cout << r5 << " > " << r6 << "? " << (r5>r6) << endl;
-    cout << r5 << " < " << r6 << "? " << (r5<r6) << endl;
+//    cout << "\nRelational Operators: " << endl;
+//    cout << r5 << " == " << r6 << "? " << (r5==r6) << endl;
+//    RatNum r12{8, 12};
+//    cout << "Test: " << r12 << "==" << r5 << "?   "<< (r5 == r12)<<endl;
+//    cout << r5 << " != " << r6 << "? " << (r5!=r6) << endl;
+//    cout << r5 << " > " << r6 << "? " << (r5>r6) << endl;
+//    cout << r5 << " < " << r6 << "? " << (r5<r6) << endl;
 
 
     // test subscript overload
-    cout << "\nSubscript Operator: " << endl;
-    cout << r5 << " num=" << r5[1] << " den=" << r5[2] << endl;
-    cout << endl;
+//    cout << "\nSubscript Operator: " << endl;
+//    cout << r5 << " num=" << r5[1] << " den=" << r5[2] << endl;
+//    cout << endl;
 
   return 0;
 }
