@@ -1,5 +1,6 @@
 #ifndef RATNUM_H
 #define RATNUM_H
+
 #include <iostream>
 using namespace std;
 
