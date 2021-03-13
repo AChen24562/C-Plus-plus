@@ -1,0 +1,26 @@
+Three File (Implementation/Interface/Application) Compilation FAQ
+------------------------------------------------------------------------
+
+Included files:
+Person.h
+Person.cpp
+driver.cpp
+
+1. Open your command prompt/terminal.
+2. Navigate to your program folder location.
+3. Execute the following commands:
+
+// compile the implementation file
+g++ -std=c++11 -c Person.cpp
+
+// compile the application file
+g++ -std=c++11 -c driver.cpp
+
+// link the .o object files and create an executable named prog.exe (win) or prog.dmg (osx)
+g++ -std=c++11 -o prog Person.o driver.o
+
+// run the program on windows
+prog
+
+// run the program on a mac
+./prog

@@ -1,0 +1,15 @@
+EX_5.4 Makefile with Variables FAQ
+----------------------------------
+
+Note: all files are identical to EX_5.3
+
+A Macro variable OBJS can be defined to contain all .o file names as such:
+OBJS = driver.o Person.o Job.o
+
+This variable can then be accessed as follows:
+$(OBJS)
+
+If the variable content will span across multiple lines the '\' character
+followed by a newline can be used to indicate the continuation of the line:
+OBJS = driver.o Person.o \
+       Job.o

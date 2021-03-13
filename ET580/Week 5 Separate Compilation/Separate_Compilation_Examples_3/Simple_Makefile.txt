@@ -1,0 +1,52 @@
+Simple Makefile FAQ
+--------------------------
+
+Included header files:
+Job.h
+Person.h
+
+Included implementation files:
+Job.cpp
+Person.cpp
+driver.cpp
+
+Object files we wish to create:
+Job.o
+Person.o
+driver.o
+
+Executable file to create (filename is customizable):
+prog.exe (windows) or prog (OSX)
+
+1. Add the phrase CXXFLAGS := -std=c++11 to the top of the makefile to specify
+   that we will be compiling for c++11.
+2. In the program directory create a file called makefile without an extension.
+3. Set a dependency rule for the executable file
+
+Format:
+executable_file_name : list_of_required_.o_files
+  g++ -std=c++11 -c list_of_required_.o_files
+
+4. Set a dependency rule for each object file (.o) you need to create:
+
+Format:
+file_to_create : list_of_required_.h_files
+  g++ -std=c++11 -c list_of_required_.cpp_files
+
+5. Set rule to delete/clean object files (.o) every time you re-compile
+
+Format (Windows):
+clean:
+	del list_of_.o_files_to_delete
+	del executable_file_name
+
+Format (OSX):
+clean:
+  rm list_of_.o_files_to_delete
+  rm executable_file_name
+
+6. To run the makefile on Windows type:
+   mingw32-make
+
+   On Linux and OSX you should be able to type:
+   make

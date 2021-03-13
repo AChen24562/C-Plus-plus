@@ -1,0 +1,38 @@
+Multiple File Compilation FAQ
+------------------------------------
+
+Included files:
+Job.h
+Person.h
+Job.cpp
+Person.cpp
+driver.cpp
+
+With multiple class files you want to avoid redundant preprocessing.
+To do so include the follow statements in each header file:
+
+// replace CLASSNAME with the name of the class in the current header file
+#ifndef CLASSNAME_H
+#define CLASSNAME_H
+<your class code here>
+#endif
+
+1. Open your command prompt/terminal.
+2. Navigate to your program folder location.
+3. Execute the following commands:
+
+// compile the implementation files
+g++ -std=c++11 -c Job.cpp
+g++ -std=c++11 -c Person.cpp
+
+// compile the application file
+g++ -std=c++11 -c driver.cpp
+
+// link the .o object files and create an executable named prog.exe
+g++ -std=c++11 -o prog driver.o Person.o Job.o
+
+// run the program
+prog
+
+// run the program on a mac
+./prog

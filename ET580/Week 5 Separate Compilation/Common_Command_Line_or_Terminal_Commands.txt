@@ -1,0 +1,23 @@
+Common Command Line/Terminal Commands (Windows/OSX)
+
+Windows
+cls    -    clear screen
+dir    -    view current directory of files and folders
+cd x   -    change directory to x, where x is a subdirectory
+
+Examples:
+cd/               - change directory to the root drive
+cd users          - changes the location to the subfolder users
+cd users/student  - changes the location to the student folder which is a
+                   subfolder of the user subfolder
+
+OSX
+clear  -    clear screen
+ls     -    view current directory of files and folders
+cd x   -    change directory to x, where x is a subdirectory
+
+Examples:
+cd/              - change directory to the root drive
+cd users         - changes the location to the subfolder users
+cd users/student - changes the location to the student folder which is a
+                  subfolder of the user subfolder
