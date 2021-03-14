@@ -28,30 +28,28 @@ bool isSafePosition(const int array[], const int& CAP, int row, int col){
   return  true;
 }
 
-bool solve(int array[], const int CAP, int row){
+bool solve(int *array, const int CAP, int row){
   if(row == CAP){
     return true;
   }
   for(int i=0; i <CAP; i++){
-    for(int j=0; j<CAP; j++){
-      array[row] = j;
-      if(isSafePosition(array,CAP, row, j)){
+
+      array[row] = i;
+      if(isSafePosition(array,CAP, row, i)){
         if(solve(array, CAP, row+1)){
           return true;
         }
         else{
-          array[row] = -1; // Changed Line
+          array[row] = -1;
         }
       }
-
-    }
   }
 return false;
 }
 
 
 int main(){
-  const int CAP = ;
+  const int CAP = 10;
   int array[CAP];
   for(int i =0; i <CAP; i++){
     array[i] = -1;

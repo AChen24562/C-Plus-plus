@@ -9,6 +9,9 @@ int main() {
     Person p1{ 50,"John Smith", 200, "Professor"};
     p1.output();
 
+    Person p2{ 50,"John Smith"};
+    p2.output();
+
     cout << endl;
     return 0;
 }
