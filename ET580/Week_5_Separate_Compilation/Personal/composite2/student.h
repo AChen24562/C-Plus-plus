@@ -1,19 +1,18 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 
-#include "grade.h"
+#include "Grade.h"
+
 class Student{
 private:
   string name;
   int age;
-  Grade stats{};
+  Grade info{};
 
 public:
   Student();
-  Student(string n, int a);
   Student(string n, int a, int s);
 
-  // Accessors Mutators
   string getName()const;
   int getAge()const;
 
@@ -23,6 +22,5 @@ public:
   void output()const;
 
 };
-
 
 #endif

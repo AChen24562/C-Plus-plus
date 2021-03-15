@@ -1,4 +1,3 @@
-# variables
 CXXFLAGS := -std=c++11
 
 # executable file to create and its dependancies
@@ -15,5 +14,5 @@ Grade.o : Grade.h
 
 # files to remove
 clean:
-	del driver.o Student.o Job.o
+	del driver.o Student.o Grade.o
 	del prog.exe

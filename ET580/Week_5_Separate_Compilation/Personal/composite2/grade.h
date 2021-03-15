@@ -15,10 +15,9 @@ public:
   int getScore()const;
   void setScore(int s);
 
-  void output()const;
+  void output() const;
+
 };
-
-
 
 
 #endif

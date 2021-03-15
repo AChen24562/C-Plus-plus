@@ -1,12 +1,12 @@
-#include "quiz1.h"
-
+#include "Course.h"
 
 int main(){
+  Course c1{};
+  Course c2{250};
 
-  Course c1{201};
-  cout <<c1.getNum() << endl;
-  c1.setNum(101);
-  cout << c1;
+  cout << c1 << endl << c2;
 
   return 0;
+
+
 }
