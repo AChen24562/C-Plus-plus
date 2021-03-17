@@ -26,7 +26,9 @@ int main() {
     // a[0] = 4 * 0 + 2000 = 2000
     // a[1] = 4 * 1 + 2000 = 2004
     // a[2] = 4 * 2 + 2000 = 2008 etc.
-    for(int i=0; i<5; ++i) {cout << a[i] << "\t" << &a[i] << "\n";}
+    for(int i=0; i<5; ++i) {
+      cout << a[i] << "\t" << &a[i] << "\n";
+    }
 
     cout << endl;
     return 0;

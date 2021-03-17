@@ -7,15 +7,21 @@ int main() {
 
   int *a = new int[5] {1,2,3,4,5};
 
-  for(int i=0; i<5; i++) { cout << a[i] << " "; }
+  for(int i=0; i<5; i++) {
+    cout << a[i] << " ";
+  }
   cout << "\n";
 
   // print values with pointer arithmetic
-  for(int i=0; i<5; i++) { cout << *(a+i) << " "; }
+  for(int i=0; i<5; i++) {
+     cout << *(a+i) << " ";
+   }
   cout << "\n\n";
 
   // print memory with pointer arithmetic
-  for(int i=0; i<5; i++) { cout << (a+i) << endl; }
+  for(int i=0; i<5; i++) {
+    cout << (a+i) << endl;
+  }
   cout << "\n";
 
   // delete the array

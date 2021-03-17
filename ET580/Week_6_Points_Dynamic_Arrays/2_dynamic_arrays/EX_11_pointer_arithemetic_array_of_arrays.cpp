@@ -11,6 +11,7 @@ int main() {
     //  create a non-contiguous dynamic array of arrays
     int **arr = new int*[ARRAYS];
     for(int i=0; i<ARRAYS; i++) { arr[i] = new int[INTEGERS];}
+    
 
     // assign values with pointer arithmetic
     int num = 1;

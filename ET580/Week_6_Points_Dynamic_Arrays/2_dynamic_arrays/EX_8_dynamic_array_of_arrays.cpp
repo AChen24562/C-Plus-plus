@@ -41,7 +41,9 @@ int main() {
 
     // delete an array of arrays
     // 1) delete each array in the second dimension
-    for(int i=0; i<arrays; ++i) { delete [] arr[i];}
+    for(int i=0; i<arrays; ++i) {
+      delete [] arr[i];
+    }
     // 2) delete the array of pointers in the first dimension
     delete [] arr;
 
