@@ -1,0 +1,17 @@
+iteratively compute a fib solution from subproblems
+up to the big problem (bottom-up)
+
+
+
+long fibonacci(int n){
+  create an array to store subproblem answers
+  assign 0 and 1 as the first values in the array
+
+  iterate from 2 to n
+      compute and store the result of n-1 + n-2
+
+  return value at a[n]
+
+
+
+}

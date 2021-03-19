@@ -33,7 +33,9 @@ int main() {
     // 1) create the first dimension (array of int pointers)
     int **arr = new int*[arrays];
     // 2) create the second dimension (arrays of integers)
-    for(int i=0; i<arrays; ++i) { arr[i] = new int[integers];}
+    for(int i=0; i<arrays; ++i) {
+      arr[i] = new int[integers];
+    }
 
     print(arr, arrays, integers);
     cout << "\n";

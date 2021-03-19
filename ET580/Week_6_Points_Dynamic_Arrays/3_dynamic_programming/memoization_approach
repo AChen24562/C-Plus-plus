@@ -1,0 +1,16 @@
+Recrusively compute fib sequence from the big problem
+down to smaller problems (top down)
+
+create an array with values defaulted to -1 to store solutions
+assign 0 and 1 as the first values in the array
+
+
+
+long fibonacci(int n, long* a){
+if(n < 2) return value at a[n]
+
+otherwise if a[n] has no value
+  compute and store the result of fibo(n-1, a) + fibo(n-2, a)
+
+otherwise return value at a[n]
+}
