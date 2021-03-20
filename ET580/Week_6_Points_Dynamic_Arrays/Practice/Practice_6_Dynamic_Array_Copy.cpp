@@ -11,12 +11,12 @@ void print(const int *array, const int size){
 int* copy(int* array, int oldSize, int newSize){
   int *a2 = new int[newSize];
   for(int i = 0; i < newSize; i ++){
-    *(a2+i) = *(array+i);
-
-    // Stop when it reaches old size, so rest can be filled with 0s
     if(i == oldSize){
       break;
     }
+    *(a2+i) = *(array+i);
+
+    // Stop when it reaches old size, so rest can be filled with 0s
   }
   return a2;
 }

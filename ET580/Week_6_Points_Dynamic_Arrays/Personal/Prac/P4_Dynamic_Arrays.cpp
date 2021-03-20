@@ -2,26 +2,25 @@
 #include <cassert>
 using namespace std;
 
-void print(const int *a, const int size){
-  for(int i = 0; i < size; i++){
-    cout << *(a+i) << " ";
+void print( int *array, const int size){
+  for(int i = 0; i  <size; i ++){
+    cout << *(array +i) << " " ;
   }
   cout << endl;
 }
-
-void print(const int *a, const int size, const int index){
-  assert(index >=1 &&  index <= size -2);
-  cout << *(a +index -1) << " ";
-  cout << *(a+index) << " ";
-  cout <<*(a +index +1) << " " << endl;
+void print(int *array, const int size, const int index){
+  assert(index >= 1 && index <= size -2);
+  cout << *(array + index-1) << " ";
+  cout << *(array + index) << " ";
+  cout << *(array + index+1) << " ";
 }
 
 int main(){
-  const int size = 10;
-  int *array = new int [size] {1, 2, 3,4 ,5,6,7,8,9,10};
-  print(array, size);
-  print(array, size, 3);
+  int size = 10;
+  int *arr =  new int[size] {10, 20, 30, 40,50,60,70,80,90,100};
 
+  print(arr, size);
+  print(arr, size, 3);
 
   return 0;
 

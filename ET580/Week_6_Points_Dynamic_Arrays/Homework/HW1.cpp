@@ -22,7 +22,7 @@ void printMemory(int const *array, const int size){
 }
 
 int *grow(int const *array, const int size, const int newSize){
-  int *newArr = new int[newSize]; // create new pointer array with new size (larger)
+  int *newArr = new int[newSize]{}; // create new pointer array with new size (larger)
   for(int i =0; i <size; i++){  // copy old to new, but since new is larger, the rest is 0
     *(newArr+i) = *(array+i);
   }
@@ -39,13 +39,13 @@ int *grow(int const *array, const int size, const int newSize){
 
   // used to get rid of the original array
   // so that memory leak doesn't occur
-  delete [] array;
+  //delete [] array;
   return newArr;  // return new array with larger size
 }
 
 
 int main(){
-  /*
+
   const int size = 2;
   const int newSize = 4;
 
@@ -58,8 +58,8 @@ int main(){
   cout << endl << endl;
   print(array1, newSize);
   printMemory(array1, newSize);
-  delete [] array1;*/
-  cout << endl;
+  delete [] array1;
+  /*  cout << endl;
   int size, newSize;
   cout << "Enter a size: ";
   cin >> size;
@@ -77,7 +77,7 @@ int main(){
   p = grow(p, size, newSize);
   cout << endl << "After grow: " << endl;
   print(p, newSize);
-  printMemory(p, newSize);
+  printMemory(p, newSize);*/
 
-
+  return 0;
 }
