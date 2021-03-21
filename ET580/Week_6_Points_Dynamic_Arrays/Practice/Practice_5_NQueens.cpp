@@ -37,7 +37,7 @@ int main(){
   // Array of Arrays
   // pointer to an array of pointers
   // ** Row of arrays, for loop runs through columns
-  int **board = new int*[8];
+  int **board = new int*[8]{};
   for(int i = 0; i < 8; i ++){
     board[i] = new int[8];
   }

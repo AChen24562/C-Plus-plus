@@ -6,16 +6,16 @@ int *create(){
   return i;
 }
 
-void update(int*p){
+void update(int *p){
   *p = *p +=1;
 }
 
 int main(){
-  int *q = create();
-  cout << *q << endl;
+  int *p = create();
+  cout << *p << endl;
+  update(p);
+  cout << *p << endl;
 
-  update(q);
-  cout << *q << endl;
+
   return 0;
-
 }
