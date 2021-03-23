@@ -13,7 +13,7 @@ int main(){
   cout << "*p: " << *p << endl;
   cout << "*q: " << *q << endl << endl;
 
-  *p  = 10;
+  *p = 10;
   cout << "i: " << i << endl;
   cout << "*p: " << *p << endl;
   cout << "*q: " << *q << endl;

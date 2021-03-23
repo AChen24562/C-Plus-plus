@@ -27,6 +27,7 @@ int main(){
     cout << *(array+i) << " " ;
   }
   cout << endl << endl;
+  // Array pointer on 20 is on stack, heap array is still accessible
   cout << "Fib: "<<fibonacci(size, array)<<endl;
   cout << "Counter: " << counter;
   return 0;

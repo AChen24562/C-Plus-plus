@@ -7,7 +7,7 @@ int *create(){
 }
 
 void update(int *p){
-  *p = *p +=1;
+  *p +=1;
 }
 
 int main(){
@@ -15,6 +15,7 @@ int main(){
   cout << *p << endl;
   update(p);
   cout << *p << endl;
+
 
 
   return 0;
