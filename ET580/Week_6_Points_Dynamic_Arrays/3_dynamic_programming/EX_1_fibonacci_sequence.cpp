@@ -19,7 +19,7 @@ long fibonacci(int n) {
 int main( ) {
     cout << endl;
 
-    cout << fibonacci(46) << "\n" << endl;
+    cout << fibonacci(30) << "\n" << endl;
     cout << counter << "\n";
 
     cout << endl;

@@ -8,28 +8,30 @@ long fibonacci(int n, long *array){
   if(n < 2){
     return *(array +n);
   }
-  else if( *(array+n-1) == -1 ){
-    *(array+n-1) = fibonacci(n-1, array) + fibonacci(n -2, array);
+  else if( *(array+n-1) == -1){
+    *(array+n-1) = fibonacci(n-1, array) + fibonacci(n-2, array);
   }
   return *(array+n-1);
 }
 
-
 int main(){
-  const int size = 47;
-  long *array = new long[size]{0,1};
+  const int n = 40;
+  long *array = new long[n]{0, 1}; // create array
 
-  for(int i = 2; i <size; i ++){
-    *(array+i) = -1;
+  for(int i =2; i <n; i ++){
+    *(array +i) = -1;
+  }
+  for(int i =0; i <n; i++){
+    cout << *(array+i) << " ";
+  }
+  cout << endl;
+
+  cout << "Fib: "<<fibonacci(n, array) << endl; // populate array, and print last index
+  cout << "Counter: " << counter << endl << endl;
+  cout << endl;
+  for(int i =0; i <n; i++){
+    cout << *(array+i) << " ";
   }
 
-  for(int i = 0; i <size; i ++){
-    cout << *(array+i) << " " ;
-  }
-  cout << endl << endl;
-  // Array pointer on 20 is on stack, heap array is still accessible
-  cout << "Fib: "<<fibonacci(size, array)<<endl;
-  cout << "Counter: " << counter;
   return 0;
-
 }

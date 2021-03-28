@@ -8,7 +8,7 @@ void swapVar(int *&p1, int *&p2){
   p2 = temp;
 }
 
-//  accepts two pointers and swaps the values of the variables they point to
+//  accepts two pointers and swaps the values of the VARIABLES they point to
 void swapVal(int *p1, int *p2){
   int temp = *p1;
   *p1 = *p2;

@@ -8,10 +8,15 @@ int main(){
   p = &i;
   q = &i;
 
-  cout << *p << endl << *q;
+  cout << "i: " << i << endl;
+  cout << "p: " << *p << endl;
+  cout << "q: " << *q << endl << endl;
+
   *p = 10;
-  cout << endl << "Updated: " << endl <<*p << endl << *q << endl << i << endl;
+  cout << "i: " << i << endl;
+  cout << "p: " << *p << endl;
+  cout << "q: " << *q << endl;
+
 
   return 0;
-
 }

@@ -1,34 +1,25 @@
 #include <iostream>
 using namespace std;
 
-void translate(int *queens ,int **board, int size){
-  for(int i = 0; i <size; i ++){
-    for(int j = 0; j <size; j ++){
-      if(*(queens +i) == j){
-        *(*(board+i) +j) = 1;
+void translate(const int *queens, int **board, const int size){
+  for(int i =0; i < size; i ++){
+    for(int j=0; j <size; j ++){
+      if(*(queens+i) == j){
+        *(*(board+i)+j) = 1;
       }
     }
   }
 }
 
 void print(int **board, int size){
-  for(int i =0;i < size; i ++){
-    for(int j = 0; j < size; j++){
-      if( *(*(board+i)+j) ==1){
-        cout << "Q " ;
+  for(int i =0; i <size; i ++){
+    for(int j=0; j <size; j ++){
+      if( *(*(board+i)+j) == 1){
+        cout << " Q ";
       }
       else{
-        cout << ". ";
+        cout << " . " ;
       }
-    }
-    cout << endl;
-  }
-}
-
-void display(int**board, int size){
-  for(int i =0; i <size;i++){
-    for(int j = 0; j <size; j++){
-      cout << *(*(board+i)+j ) << " ";
     }
     cout << endl;
   }
@@ -42,13 +33,9 @@ int main(){
     *(board+i) = new int[8]{};
   }
 
-  display(board, 8);
-  cout << endl << endl;
-  translate(queens, board,  8);
-  display(board, 8);
-  cout << endl << endl;
+  const int size = 8;
+  translate(queens, board, 8);
   print(board, 8);
-
 
 
   return 0;

@@ -1,34 +1,34 @@
 #include <iostream>
 using namespace std;
 
-void print(const int *arr, const int size){
-  for(int i = 0; i <size; i ++){
-    cout << *(arr +i) << " ";
+void print(const int *array, const int size){
+  for(int i =0; i <size; i++){
+    cout << *(array +i) << " ";
   }
-  cout << endl;
+  cout << endl << endl;
 }
 
-int *copy(const int *arr, const int oldSize, const int newSize){
+int *copy(int *array, const int oldSize, const int newSize){
   int *newArr = new int[newSize]{};
-  for(int i=0; i < oldSize; i++){
-    if(i == newSize){
+  for(int i =0; i <oldSize; i++){
+    if(i == oldSize){
       break;
     }
-    *(newArr+i) = *(arr+i);
+    *(newArr +i) = *(array + i);
   }
   return newArr;
 }
 
 int main(){
   const int size = 10;
-  int *arr = new int[size]{10,20,30,40,50,60,70,80,90,100};
-  print(arr, size);
+  int *array = new int[size]{10, 20,30,40,50,60,70,80,90,100};
 
-  int *arrLarge = copy(arr,size, 15);
-  print(arrLarge, 15);
+  print(array, size);
+  int *largeArray = copy(array, size, 15);
+  print(largeArray, 15);
 
-  int *arrSmall = copy(arr, size, 5);
-  print(arrSmall, 5);
+  int *smallArray = copy(array, size, 5);
+  print(smallArray, 5);
+
   return 0;
-
 }
