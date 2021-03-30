@@ -15,7 +15,7 @@ long fibonacci(int n, long *array){
 }
 
 int main(){
-  const int n = 40;
+  const int n = 10;
   long *array = new long[n]{0, 1}; // create array
 
   for(int i =2; i <n; i ++){
@@ -29,9 +29,6 @@ int main(){
   cout << "Fib: "<<fibonacci(n, array) << endl; // populate array, and print last index
   cout << "Counter: " << counter << endl << endl;
   cout << endl;
-  for(int i =0; i <n; i++){
-    cout << *(array+i) << " ";
-  }
 
   return 0;
 }

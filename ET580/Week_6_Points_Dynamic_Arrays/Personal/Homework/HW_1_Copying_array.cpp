@@ -26,6 +26,7 @@ int *grow(const int *array, const int size, const int newSize){
   for(int i =0; i <size; i ++){
     *(newArr+i) = *(array+i);
   }
+  delete [] array;
   return newArr;
 }
 
@@ -37,9 +38,9 @@ int main(){
   printMem(array, size);
 
   const int newSize = 4;
-  int *largeArray = grow(array, size, newSize);
-  print(largeArray, newSize);
-  printMem(largeArray, newSize);
+  array = grow(array, size, newSize);
+  print(array, newSize);
+  printMem(array, newSize);
 
 
 
