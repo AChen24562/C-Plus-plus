@@ -1,27 +1,32 @@
 #include <iostream>
 using namespace std;
 
-void swapVar(int *& a, int *&b){
-  int *c = a;
-  a = b;
-  b = c;
-  
+void swapVar(int *&p1, int *& p2){
+  int *temp = p1;
+  p1 = p2;
+  p2 = temp;
 }
 
-void swapVal(int *a, int *b){
-  int temp = *a;
-  *a = *b;
-  *b = temp;
+void swapVal(int *p1, int *p2){
+  int temp = *p1;
+  *p1 = *p2;
+  *p2 = temp;
 }
 
 int main(){
-  int *num1 = new int(1);
-  int *num2 = new int(2);
+  int a = 1;
+  int b = 2;
+  int *p1 = &a;
+  int *p2 = &b;
 
-  cout << *num1 << " " << *num2 << endl;
-  swapVar(num1, num2);
-  cout << *num1 << " " << *num2 << endl;
 
-  swapVal(num1 , num2);
-  cout << *num1 << " " << *num2 << endl;
+  cout << *p1 << " " << *p2<< endl;
+  cout << a << " " << b << endl << endl;
+  swapVal(p1, p2);
+  cout << *p1 << " " << *p2<< endl;
+  cout << a << " " << b << endl << endl;
+  swapVar(p1, p2);
+  cout << *p1 << " " << *p2<< endl;
+  cout << a << " " << b << endl << endl;
+  return 0;
 }
