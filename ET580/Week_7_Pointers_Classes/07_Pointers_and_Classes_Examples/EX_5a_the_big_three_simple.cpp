@@ -16,11 +16,12 @@ public:
     ~Course();                                // destructor
 };
 
+// Copy
 Course::Course(const Course &c):              // copy constructor
     number(new int( *(c.number) )),           // initialize dynamic memory
     prof(c.prof)                              // initialize automatic memory
 {}
-
+// Assignment
 Course& Course::operator=(const Course &c) {  // assignment operator overload
     if(this != &c) {                          // only copy if objects are different
         *number = *(c.number);                // deep copy the heap data member
@@ -28,7 +29,7 @@ Course& Course::operator=(const Course &c) {  // assignment operator overload
     }
     return *this;                             // return the calling object by reference
 }
-
+// Delete
 Course::~Course() {                           // destructor
     delete number;                            // safely delete dynamic memory
 }

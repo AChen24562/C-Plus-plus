@@ -2,6 +2,11 @@
 #include <iostream>
 using namespace std;
 
+// SHOULD ONLY WORRY ABOUT SHALLOW COPIES IF YOU HAVE DYNAMIC DATA MEMBERS
+//
+//
+// LINE 12
+
 class Course {
 private:
     int *number;                            // dynamic data member

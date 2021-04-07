@@ -2,21 +2,14 @@
 using namespace std;
 
 int main(){
-  int i = 5;
-  int *p, *q;
+ int *p;
+ p = new int();
+ *p = 10;
 
-  p = &i;
-  q = &i;
-
-  cout << "i: " << i << endl;
-  cout << "p: " << *p << endl;
-  cout << "q: " << *q << endl << endl;
-
-  *p = 10;
-  cout << "i: " << i << endl;
-  cout << "p: " << *p << endl;
-  cout << "q: " << *q << endl;
+ cout << p << endl;
+ cout << *p << endl;
 
 
+ delete p;
   return 0;
 }
