@@ -47,13 +47,12 @@ void printArr();
   // Assignment (=) operator, copy from a class object to another
   IntArray& operator=(const IntArray &ia){
     if(this != &ia){
-      if(size != ia.size || capacity != ia.capacity){
-      delete [] array;
 
       capacity = ia.capacity;
       size = ia.size;
+      delete[] array;
       array = new int [ia.capacity]{};
-    }
+
 
       for(int i =0; i < size; i ++){
         *(array +i) = *(ia.array+i);
