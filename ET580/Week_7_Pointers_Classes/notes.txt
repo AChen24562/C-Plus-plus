@@ -1,0 +1,51 @@
+Destructors
+  Delete all dynamic objects that goes out of scope
+
+
+Below are slower than normal constructors because they look up data to copy
+Copy Constructor for Dynamic Array
+  Create a new object from an already existing object
+  creates new memory space
+  Course c2{c1}
+  Course c2 = c1
+
+Assignment Overload Operator for Dynamic array
+  Copy from one object that already exists to another
+  object that exists. Changes values held at current memory space
+  c2 = c1
+
+  Check if the calling object is the same as the parameter object, if not the
+  same, copy
+
+  Arrays must be the same size, If size are the same, skip and assign
+  If they are different delete calling array and assign correct size and array values
+
+
+Elision
+  Because the copy and assignment is slower than normal, because of copying from one
+  location to another
+
+  Elision is a compiler optimization for passing temporary objects by value
+
+  void function(Course obj){}
+  Course c1{575};
+  function(c1); <-- Calls copy constructor
+
+  f(Course{}); <-- passes a temp object by value
+  Constructs the temporary object in the memory space of obj so the copy constructor
+  is not used
+
+Return Value Optimization
+  Compiler optimization for returning temporary objects by value, which avoid
+  calling the copy constructor and are constructed in the memory space of the new object
+
+  Course f1(){
+  Course c;
+  return c;
+  }
+
+  Course c1 = Course{}; <-- Temp object constructed in memory space of c1, copy constructor
+  not needed
+
+  Course c2= f1(); <-- Temp obj returned by value, constructed in memory space of c2, copy
+  not needed

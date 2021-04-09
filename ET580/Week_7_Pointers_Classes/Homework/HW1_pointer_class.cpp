@@ -36,6 +36,8 @@ void printArr();
   }
 
   // Copy constructor, Creates a new class object from an already existing
+  //Class a = b
+  // Class a{b}
   IntArray(const IntArray &ia):
     capacity(ia.capacity),
     size(ia.size),
@@ -44,15 +46,17 @@ void printArr();
         *(array +i) = *(ia.array + i);
       }
     }
-  // Assignment (=) operator, copy from a class object to another
+  // Assignment (=) operator, copy from a class object to another a = b
   IntArray& operator=(const IntArray &ia){
     if(this != &ia){
 
-      capacity = ia.capacity;
-      size = ia.size;
-      delete[] array;
-      array = new int [ia.capacity]{};
+      if(size != ia.size){
+        delete[] array;
+        capacity = ia.capacity;
+        size = ia.size;
 
+        array = new int [ia.capacity]{};
+    }
 
       for(int i =0; i < size; i ++){
         *(array +i) = *(ia.array+i);
