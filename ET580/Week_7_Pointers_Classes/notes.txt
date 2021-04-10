@@ -1,3 +1,29 @@
+Shallow Copy
+  A copy of an object data member
+  Does not work well if used with data that is dynamic
+  Because it will copy the memory location of the pointer. leaving the original
+  memory location it was pointing to open
+  c2.number = c1.number
+
+Deep Copy
+  Used for dynamic data members
+  Pointer data is dereferenced then value is copied into the memory address of pointer
+  that called it
+  *c2.number = *(c1.number)
+
+This Pointer
+  self syntax
+  is a pointer to the object that called it, so you can use this in tandem with
+  the arrow operator to access data members or functions within the object 
+
+Arrow Operator
+  Another method of dereferencing
+
+  Used for pointer objects
+  Instead of (*c).number; we can use
+  c->number; instead in order to dereference the memory address of the pointer
+  to get the value Or used to access the functions of a pointer object
+
 Destructors
   Delete all dynamic objects that goes out of scope
 
