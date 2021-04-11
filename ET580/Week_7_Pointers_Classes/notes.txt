@@ -11,12 +11,12 @@ Deep Copy
   that called it
   *c2.number = *(c1.number)
 
-This Pointer
+This Pointer (this)
   self syntax
   is a pointer to the object that called it, so you can use this in tandem with
-  the arrow operator to access data members or functions within the object 
+  the arrow operator to access data members within the calling object
 
-Arrow Operator
+Arrow Operator (->)
   Another method of dereferencing
 
   Used for pointer objects
