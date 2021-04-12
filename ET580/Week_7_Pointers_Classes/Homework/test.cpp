@@ -3,10 +3,10 @@
 using namespace std;
 class IntArr{
 private:
-    int capacity;
-    int size;
-    int *array;
-    void grow();
+    int capacity; // current capacity of the partially filled array
+    int size;     // current number of values in the partially filled array
+    int *array;  	// pointer to a dynamic partially filled array
+    void grow(); 	// private function called by the push_back function when needed
 
 
 public:
@@ -16,9 +16,9 @@ public:
     int& operator[](int index);
     const int& operator[](int index) const;
 
-    IntArr(const IntArr &intArray);
-    IntArr& operator=(const IntArr &iArr);
-    ~IntArr();
+    IntArr(const IntArr &intArray);	// copy constructor (big three)
+    IntArr& operator=(const IntArr &iArr); // assignment overload operator (big three)
+    ~IntArr(); // destructor (big three)
 
     int getCapacity() const;
     int getSize() const;
@@ -34,84 +34,17 @@ int IntArr::getSize() const { return size; }
 
 // Constructors
 IntArr::IntArr(): capacity(5), size(0), array( new int[5]() ){}  // default
-IntArr::IntArr(int c): capacity(c), size(0), array( new int[c]() ) {}; // one-parameter
+IntArr::IntArr(int c): capacity(c), size(0) {
+	assert(capacity > 0); // validate that capacity is a positive value
+	array = new int[c]();	// create a dynamic array that can store c values
+}; // one-parameter
 
 // Copy Constructor
-IntArr::IntArr(const IntArr &iArr): capacity(iArr.capacity), size(iArr.size), array( new int[iArr.size] ) {
-  for(int i=0; i<iArr.size; ++i){
-    array[i] = iArr.array[i];
-  }
-
-}
-
-
-// Deconstructor
-IntArr::~IntArr(){ delete [] array; }
-
-// Grow Function
-void IntArr::grow(){
-    capacity = capacity*2+1;    // increase capacity
-    int *newArr = new int[capacity];    // create new array using new capacity
-
-    for(int i=0; i<size; ++i){
-      newArr[i] = array[i];         // copy elements in orignal array into new array
-
-    }
-
-    delete [] array;    // delete original array to avoid memory leak
-    array = newArr;     // reassign pointer to newArray of new capacity
-
-}
-
-// Subscript Overload
-int& IntArr::operator[](int index){
-  assert(index>=0 && index<size);   // validate index
-  return array[index];              // return memory address of index by reference
-}
-
-// Subscript Overload for Const Objects
-const int& IntArr::operator[](int index) const{
-  assert(index>=0 && index<size);
-  return array[index];
-}
-
-// Assignment Operator Overload  IntArr&
-IntArr& IntArr::operator=(const IntArr &iArr){
-
-    if(this != &iArr){    // compare memory addresses to check if objects are same
-
-        if(size != iArr.size || capacity != iArr.capacity){  // check for equivalence
-            capacity = iArr.capacity;   // reassign size in calling object
-            size = iArr.size;           // reassign capacity in calling object
-
-            delete [] array;            // delete array in calling object to avoid memory leak
-            array = new int[capacity]; // reassign array to a new array of new capacity
-
-        }
-
-    // if both size and capacity are already equivalent, we can directly start copying data
-        for(int i=0; i<iArr.size; ++i){
-            array[i] = iArr.array[i];
-        }
-    }
-
-    return *this;
-}
-
-void IntArr::push_back(int num){
-    if(size == capacity){  // if the array is already full
-      this->grow();        // grow the array (allocates a new location in memory as seen in the grow function)
-      array[size]=num;    // append new element to end of array
-      ++size;             // incrememnt size
-    }else{                // if array not full
-        array[size]=num;
-        ++size;
-    }
-}
-
-void IntArr::pop_back(){
-    if(size>0){   // if array has data
-    --size;       // decrement size
+IntArr::IntArr(const IntArr &iArr):
+capacity(iArr.capacity), size(iArr.size), array( new int[iArr.size] ) {
+	// array(new int[iArr.size]) creates a new dynamic array for the new object
+  for(int i=0; i=0 && index=0 && index0){           // if array has data
+    	--size;             // decrement size
     }
 }
 int main(){
