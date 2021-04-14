@@ -56,7 +56,7 @@ const int& IntArr::operator[](int index) const{
 IntArr::IntArr(const IntArr &ia):
     capacity(ia.capacity),
     size(ia.size),
-    array(new int[capacity]{} ){
+    array(new int[ia.capacity]{} ){
       for(int i = 0; i <ia.size; i++){
         array[i] = ia.array[i];
       }
@@ -65,10 +65,9 @@ IntArr::IntArr(const IntArr &ia):
 IntArr&IntArr::operator=(const IntArr &ia){
   if(this != &ia){
 
-    if(size != ia.size){
+    if(size != ia.capacity){
       delete[] array;
       capacity = ia.capacity;
-      size = ia.size;
 
       array = new int [ia.capacity]{};
   }
