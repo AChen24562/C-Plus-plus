@@ -11,8 +11,7 @@ public:
   // Accessors/ Mutators
   string getName() const {return *name;}
   void setName(string n){
-    delete name; // Deletes original value
-    name = new string(n); // Assigns new value to dynamic memory
+    *name = n;
   }
 
   // Big Three
@@ -47,8 +46,7 @@ public:
   // Accessors/Mutator
   string getTopping()const{return *topping;}
   void setTopping(string t){
-    delete topping; // Deletes original value
-    topping = new string(t); // Assigns new value to dynamic memory
+    *topping = t;
   }
 
 // Big Three
