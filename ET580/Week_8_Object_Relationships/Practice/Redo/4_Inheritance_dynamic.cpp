@@ -6,21 +6,24 @@ protected:
   string *name;
 
 public:
-  Person():Person("NoName"){}
-  Person(string n): name(new string(n) ){}
+  Person(): Person("NoName"){}
+  Person(string n): name( new string(n) ){}
 
-  void display(){
-    cout << "Name: " << *name << endl <<endl;
+  string *getName()const{return name;}
+  void setName(string n){*name =n;}
+
+  void display()const{
+    cout << *name <<endl;
   }
   // Big Three
   // Copy
   Person(const Person &p){
-    cout << "Person copy" << endl;
-    name = new string(*(p.name));
+    cout << "Person Copy" << endl;
+    name = new string( *p.name);
   }
   // Assignment(=)
   Person& operator=(const Person &p){
-    cout << "Person Assignment " << endl;
+    cout << "Person Assignment(=)" << endl;
     if(this != &p){
       *(name) = *(p.name);
     }
@@ -30,56 +33,53 @@ public:
   ~Person(){delete name;}
 
 };
-// End of Person class
 
-
-class Student : public Person{
+class Student: public Person{
 private:
-  int *id;
+  int *iden;
 
 public:
   Student(): Student("NoName", 0){}
-  Student(string n, int i): Person(n), id( new int(i) ){}
+  Student(string n, int i): Person(n), iden(new int(i) ){}
 
-  void display(){
-    cout << "Name: " << *name << " " << "ID: " << *id << endl << endl;
+  int *getID()const{return iden;}
+  void setID(int id){*iden = id;}
+
+  void display()const{
+    cout << *name << " " << *iden <<endl << endl;
   }
 
   // Big Three
   // Copy
   Student(const Student &s):
-  Person(s),
-  id(new int( *(s.id) )){
+    Person(s),
+    iden(new int( *(s.iden))) {
     cout << "Student Copy" << endl;
   }
   // Assignment (=)
   Student &operator=(const Student &s){
-    cout << "Student Assignemnt (=)" << endl;
+    cout << "Student Assignment(=)" << endl;
     if(this != &s){
       Person::operator=(s);
-      *(id) = *(s.id);
+      *(iden) = *(s.iden);
     }
     return *this;
   }
-  ~Student(){delete id;}
+  ~Student(){delete iden;}
+
 };
 
 int main(){
-  Person p1{"Daniel"};
-  p1.display();
-
-  Student s1{"Jeff", 123};
+  Student s1{"Lego", 123214};
   s1.display();
 
-  Student s2{"Alvin", 4445};
+  Student s2{s1};
   s2.display();
 
-  Student s3{s1};
+  Student s3{};
+  s3 = s2;
+
   s3.display();
-
-  s1 = s2;
-  s1.display();
-
 
   return 0;
 }

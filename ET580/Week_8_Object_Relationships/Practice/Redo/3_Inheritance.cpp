@@ -6,35 +6,41 @@ protected:
   string name;
 
 public:
-  Person():Person("NoName"){}
+  Person(): Person("NoName"){}
   Person(string n): name(n){}
 
-  void display(){
-    cout << "Name: " << name << endl;
+  string getName()const{return name;}
+  void setName(string n){name =n;}
+
+  void display()const{
+    cout << name <<endl;
   }
 
 };
-// End of Person class
-class Student : public Person{
+
+class Student: public Person{
 private:
-  int id;
+  int iden;
 
 public:
   Student(): Student("NoName", 0){}
-  Student(string n, int i): Person(n), id(i){}
+  Student(string n, int i): Person(n), iden(i){}
 
-  void display(){
-    cout << "Name: " << name << " " << "ID: " << id << endl;
+  int getID()const{return iden;}
+  void setID(int id){iden = id;}
+
+  void display()const{
+    cout << name << " " << iden <<endl;
   }
+
 };
 
 int main(){
-  Person p1{"Daniel"};
+  Person p1{"Aaron"};
   p1.display();
 
-  Student s1{"Jeff", 123};
+  Student s1{"Steven", 1231231};
   s1.display();
-
 
   return 0;
 }
