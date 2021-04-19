@@ -6,45 +6,45 @@ private:
   string name;
 
 public:
-  Professor():Professor("NoName"){}
+  Professor(): Professor("NoName"){}
   Professor(string n): name(n){}
 
   string getName()const{return name;}
   void setName(string n){name =n;}
 
-  friend ostream& operator<<(ostream& out, const Professor &p);
-
+  friend ostream& operator<<(ostream &out, Professor &p);
 };
-ostream& operator<<(ostream& out, const Professor &p){
-  out << p.name;
+ostream& operator<<(ostream &out, Professor &p){
+  out << p.getName();
   return out;
 }
 
-class Course{ //Course has a Professor, but Prof. can change
+class Course{
 private:
   int num;
   Professor *prof;
 
 public:
   Course(): num(0), prof(nullptr){}
-  Course(int n, string p): num(n), prof(new Professor(p)){}
-  Course(int n, Professor &p): num(n), prof(&p){}
+  Course(int n, string pName): num(n), prof(new Professor(pName)){}
+  Course(int n, Professor &p): num(n), prof( &p){}
 
   int getNum()const{return num;}
-  void setNum(int n){num =n;}
+  void setNum(int n){num = n;}
 
-  Professor *getProf(){return prof;}
+  Professor *getProf()const{return prof;}
   void setProf(Professor &p){prof = &p;}
 
-  friend ostream &operator<<(ostream &out, const Course &c){
-    out << c.num << " " << c.prof->getName();
-    return out;
-  }
-
+  friend ostream& operator<<(ostream &out, Course &c);
 };
+ostream& operator<<(ostream &out, Course &c){
+  out << c.getNum() << " " << c.prof->getName();
+  return out;
+}
 
 int main(){
   Professor p1{"Trowbridge"};
+  cout << p1 << endl;
 
   Course c1{580, p1};
   cout << c1 << endl;
@@ -54,8 +54,6 @@ int main(){
 
   cout << p1.getName() << endl;
   cout << *(c2.getProf()) << endl;
-
-
 
   return 0;
 }

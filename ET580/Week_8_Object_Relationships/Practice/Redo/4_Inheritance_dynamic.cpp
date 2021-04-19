@@ -6,24 +6,25 @@ protected:
   string *name;
 
 public:
-  Person(): Person("NoName"){}
-  Person(string n): name( new string(n) ){}
+  Person():Person("NoName"){}
+  Person(string n): name(new string(n)){}
 
-  string *getName()const{return name;}
-  void setName(string n){*name =n;}
+  string getName()const{return *name;}
+  void setName(string n){*name = n;}
 
   void display()const{
-    cout << *name <<endl;
+    cout << "Name: " << *name<< endl;
   }
   // Big Three
   // Copy
-  Person(const Person &p){
+  Person(const Person &p):
+  name(new string(*(p.name)))
+  {
     cout << "Person Copy" << endl;
-    name = new string( *p.name);
   }
   // Assignment(=)
   Person& operator=(const Person &p){
-    cout << "Person Assignment(=)" << endl;
+    cout << "Person Assignment (=)" << endl;
     if(this != &p){
       *(name) = *(p.name);
     }
@@ -31,55 +32,53 @@ public:
   }
   // Destructor
   ~Person(){delete name;}
-
 };
 
 class Student: public Person{
 private:
-  int *iden;
+  int *id;
 
 public:
   Student(): Student("NoName", 0){}
-  Student(string n, int i): Person(n), iden(new int(i) ){}
+  Student(string n, int i): Person(n), id(new int(i)){}
 
-  int *getID()const{return iden;}
-  void setID(int id){*iden = id;}
+  int getID()const{return *id;}
+  void setID(int i){*id = i;}
 
   void display()const{
-    cout << *name << " " << *iden <<endl << endl;
+    cout << "Name: " << *name << endl
+        << "ID: " << *id << endl << endl;
   }
-
-  // Big Three
+  // Big three
   // Copy
   Student(const Student &s):
     Person(s),
-    iden(new int( *(s.iden))) {
-    cout << "Student Copy" << endl;
-  }
-  // Assignment (=)
+    id(new int(*s.id))
+  {cout << "Student Copy" << endl;}
+  // Assignment
   Student &operator=(const Student &s){
-    cout << "Student Assignment(=)" << endl;
+    cout << "Assignment (=)" << endl;
     if(this != &s){
       Person::operator=(s);
-      *(iden) = *(s.iden);
+      *id = *(s.id);
     }
     return *this;
   }
-  ~Student(){delete iden;}
-
+  // Destructor
+  ~Student(){delete id;}
 };
 
 int main(){
-  Student s1{"Lego", 123214};
+  Student s1{"Daniel", 12314};
   s1.display();
 
   Student s2{s1};
   s2.display();
 
-  Student s3{};
+  Student s3{"Steven", 125123};
   s3 = s2;
-
   s3.display();
+
 
   return 0;
 }
