@@ -1,0 +1,76 @@
+Polymorphism
+  - Sharing a common interface for related objects while
+  retaining access to its unique behaviors as well
+
+  Requires inheritance
+  Requires Virtual Functions
+  Base reference or pointer used to access derived objects
+
+  Use pointers of type parent to point to child
+  Always make a virtual destructor
+
+
+Virtual Functions
+  - A redefined function where the calling object determines
+  if the base or derived version of the function is called
+
+Base = Parent
+Derived = Child
+
+Late/Dynamic Binding: Polymorphic // Pointer to pointer, or array to array
+  - Type is determined at runtime, rather than compile
+  - Virtual in parent
+  -  OVERRIDE in child, redefines the virtual function
+
+Make sure you are working with the object of the child  type
+
+Covariant Return
+  - Redefined function with child instead of parent return type
+
+Virtual Destructor
+  - Ensure that the child destructor is called for a child object
+  - When pointer is deleted/goes out of scope, both parent and child destructors are called
+
+Abstract Classes
+  - Implement an interface that can be used indirectly through inheritance
+  an abstract class cannot be instantiated, but it's derived classes can
+  require one or more pure virtual functions
+
+  - Pure virtual function lacks a definition and is intended to be implemented in
+  in derived class
+    virtual void output() const = 0;
+
+Slicing Problem
+  - When child object is copied to parent objects,  child is lost
+  - Fix
+      - Parent *p
+      Child *c = new Child();
+      p = c;
+
+Upcast vs Downcast
+- Upcast: Child pointer to parent pointer
+    pp = &c;
+- DownCast: Parent pointer to child point (Only Explicit is allowed)
+    cp = static_cast<Child*>(&p);
+    instead use:
+
+    for(int i=0; i<5; ++i) {
+        if( dynamic_cast<Bird*>(a[i]) ) {               // check if a[i] is-a bird
+            Bird *b = dynamic_cast<Bird*>(a[i]);        // if so cast, then run a bird function
+            cout << b->getWingSpan() << "\n";
+        }
+
+    }
+
+
+Use Virtual functions or pure virtual functions
+Use virtual destructors
+Use base pointers or references to access derived objects
+  Parent *p = new Child();
+
+Use base pointers in data structures of derived objects:
+  Parent **p = new Parent*[100]
+
+Copying
+Parent *p1, *p2 = new Child();
+p1 = p2;
