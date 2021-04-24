@@ -1,41 +1,39 @@
 #include <iostream>
 using namespace std;
 
+
 class Person{
 protected:
   string name;
 
 public:
-  Person(): Person("NoName"){} // Person constructor
-  Person(string n ):name(n){}
+  Person():Person("NoName"){}
+  Person(string n): name(n){}
 
-  virtual void output()const=0; // Sets Person to an abstract class
+  virtual void output()const=0;
 };
 
-// Base of Person, Derived of Student
-class Student: public Person{ // Student is-a Person
+class Student: public Person{
 private:
   int id;
-
 public:
-  Student(): Student("noName",0){}
+  Student():Student("NoName", 0){}
   Student(string n, int i): Person(n), id(i){}
 
-  void output()const override{ // Overrides the pure virtual function
-    cout << name << " " << id << endl;  // prints name and id  of Student
+  void output()const override{
+    cout << name << " " << id <<endl;
   }
 };
-// Base of Person, Derived of Employee
-class Employee: public Person{// Employee is-a Person
+
+class Employee:public Person{
 private:
   string job;
-
 public:
-  Employee(): Employee("NoName", "NoJob"){}
-  Employee(string n, string j): Person(n), job(j){}
+  Employee():Employee("NoName", "NoJob"){}
+  Employee(string n, string j):Person(n), job(j){}
 
-  void output()const override{ // Overrides the pure virtual function
-    cout << name <<" " << job << endl; // Prints name and job title of Employee
+  void output()const override{
+    cout << name << " " << job <<endl;
   }
 };
 
@@ -54,7 +52,6 @@ int main(){
     p[i]->output();
   }
   cout << endl;
-
-
   return 0;
+
 }

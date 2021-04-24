@@ -50,6 +50,7 @@ public:
   Cake &operator=(const Cake &c){
     if(this != &c){
       cout << "Cake Assignment (=)" << endl;
+      Food::operator=(c);
       *(topping) = *(c.topping);
     }
     return *this;
