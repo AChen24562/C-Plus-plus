@@ -1,0 +1,29 @@
+Errors:
+  Hanging if a certain parameter is met
+  Errors from dividing by 0
+  Terminate with error value exit(1);
+
+  assert(b != 0) Terminate and print error
+
+  In a linear search, start from first to last element
+  return -1 indicate an element in a list is not found
+
+Exception
+  A method of handling errors to improve and simplify the flow of code
+
+  Throw a signal that an exception (error) has occurred
+  Try a block of code which has the potential for throwing an exception due to errors
+    Test or looking for an error
+  Catch a block of code which handles thrown exceptions from the try block
+
+Templates
+  function that does not require its parameters to be type specific
+  such as a swap can be made simpler with templates
+
+  template<typename T>
+  Now in your function whenever you needed a type (string, int, etc) write T
+
+  auto, realized by compiler
+  Does not support automatic type conversion
+
+  Type is based on what you call the function with

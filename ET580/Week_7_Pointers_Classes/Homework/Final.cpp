@@ -65,12 +65,13 @@ IntArr::IntArr(const IntArr &ia):
 IntArr&IntArr::operator=(const IntArr &ia){
   if(this != &ia){
 
-    if(size != ia.capacity){
+    if(capacity != ia.capacity){
       delete[] array;
       capacity = ia.capacity;
 
       array = new int [ia.capacity]{};
   }
+    size = ia.size;
 
     for(int i =0; i < size; i ++){
       array[i] = ia.array[i];
