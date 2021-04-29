@@ -29,6 +29,16 @@ public:
 
   void push_back(int num);
   void pop_back();
+  void printArr(){
+    for(int i =0; i < capacity; i ++){
+      cout << *(array+i) << " ";
+    }
+    cout << endl;
+    for(int i =0; i < capacity; i ++){
+      cout << (array+i) << " ";
+    }
+    cout << endl ;
+  }
 };
 // Accessors
 int IntArr::getCapacity() const { return capacity; }
@@ -136,8 +146,8 @@ int main(){
   cout << "Array B: ";
   for (int i=0; i<b.getSize(); ++i){ cout << b[i] << " "; }
   cout << "Size: " << b.getSize() << " Capacity: " << b.getCapacity() << endl;
-  //a.printArr();
-  //b.printArr();
+  a.printArr();
+  b.printArr();
 
   cout << "\n\nTest Pop_Back (pop last two elements)" << endl;
   b.pop_back();
@@ -159,8 +169,8 @@ int main(){
   cout << "Array B: ";
   for (int i=0; i<b.getSize(); ++i){ cout << b[i] << " "; }
   cout << "Size: " << b.getSize() << " Capacity: " << b.getCapacity() << endl;
-  //a.printArr();
-  //b.printArr();
+  a.printArr();
+  b.printArr();
 
   cout << endl << endl;
 
