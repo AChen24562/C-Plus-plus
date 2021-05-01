@@ -97,6 +97,8 @@ template <typename T>
 void MyArray<T>::push_back(T value) { // In our case Accepts an object pointer
   if(size==capacity){
     grow(); // Calls grow in private because we create the array with 0 size
+    data[size] = value;
+    size++;
   }
   else{
     data[size] = value;
@@ -106,6 +108,7 @@ void MyArray<T>::push_back(T value) { // In our case Accepts an object pointer
 // Erase
 template <typename T>
 void MyArray<T>::erase(const int index){
+  delete data[index];
   for(int i =index; i <size; i++){
     data[i] = data[i +1];
   }
@@ -186,6 +189,9 @@ cout <<endl <<endl;
 
   ObjectArray.push_back(new SomeObj(123));
   cout<<ObjectArray.getCap() <<endl;
+  print(ObjectArray);
+  ObjectArray.erase(10);
+  print(ObjectArray);
 
 
 
