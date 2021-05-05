@@ -1,0 +1,86 @@
+namespace: grouping of entities, classes, objects, functions under a similar name
+  namespace std;
+  instead use: std::cout, etc
+
+  namespace myvars{
+    int x = 5;
+  }
+  namespace yourvars{
+    int x = "hi";
+  }
+
+  cout << myvars::x;
+  cout << yourvars::x;
+
+  std:: string: string belongs to the standard namespace ( :: scope resolution)
+    friend std::ostream&
+  Can have class objects, variables, etc with the same name exist in the program
+    but each with a different namespace
+
+  Professional C++ does not have using namespace std, because this hinders the
+    ability for users to specify different namespaces for each section of code,
+     you don't want to a global namespace
+
+
+Linked Structures vs array
+  Array: A contigious block of memory where memory address indicate order
+  Linked List: A non-contiguous block of memory linked by pointers indicating order
+    Data is encapsulated inside a node
+    One or more pointers to link one node to the next, so that you can traverse through the linked
+
+    single linked: first: head, last: tail
+      One link connecting one node to another
+      Can only get to one node from the beginning, cannot go backwards
+      one pointer per node pointing foward
+      can easily add a new value/remove values
+
+    Doubly linked list: can go backwards, but must start from tail or head
+      has two pointers per node, one foward one backward
+      -------------------------------------
+      Arrays are faster at finding information, but when you insert it can be costly when the array is large
+      due to shifting
+      -------------------------------------
+
+    Stack: stack of plates, front is on the bottom, start from the top (First in last out)
+      when you want to add or remove data, you work with the top of the stack before going down
+
+    Queue: First in First Out: Line, front back
+      Difference with stack
+        Stack: Cannot interfere with the nodes in the middle, only the top
+        Queue: Cannot interfere with the nodes in the middle, only the front/back Node
+    Backnode points to nullptr, stack: bottom node points to nullptr
+      Add to the back, remove from front
+      Stack:
+          Remove and add at the top
+      Stack has one pointer to the top of the stack
+      Queue has two pointers to the first and last node
+
+    Tree:
+      Root: top
+      Branches: Connect nodes
+      Leaves: Node that doesn't create new nodes
+        At every node there will be two or more pointers connecting to other nodes
+      Every node to the left is smaller than the previous
+
+    Graph:
+      No starting point, can connect at any point
+      trees without hierarchy
+      Used for networks
+      Network of computers, airline destinations, friends
+      Used to connect nodes and show the relationship between those nodes
+
+    Linked Structures are coded using pointers to link nodes of data --------------!!!!
+      A node structure with associated functions (simple)
+      A node class in composition with a container class
+      Template node, container and iterator classes (Complex)
+
+  Usage:
+    Stack:
+      Memory applications
+    Queue:
+      Job handling by the CPU and how much CPU clock time is allocated for a program
+      to run for
+    Tree:
+      File systems
+    Graph:
+      Anything with a network similar design to it

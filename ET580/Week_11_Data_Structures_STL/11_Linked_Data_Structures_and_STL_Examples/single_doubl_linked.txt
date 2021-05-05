@@ -1,0 +1,14 @@
+Single Linked list
+    A single linked list is a list of nodes where each node has a single link to
+    the next node in the structure
+    Final Node links to nullptr
+
+    Similar  to a queue
+    head pointer: first node on  the list
+    tail pointer: last node on the list
+
+    Similar to stack/queue:
+      Can only travel in one direction
+      Stack node or queue node, or single linked list: all next pointer and data
+    Difference:
+        Can insert or remove anywhere

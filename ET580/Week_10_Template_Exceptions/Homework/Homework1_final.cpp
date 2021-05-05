@@ -108,8 +108,8 @@ void MyArray<T>::push_back(T value) { // In our case Accepts an object pointer
 // Erase
 template <typename T>
 void MyArray<T>::erase(const int index){
-  delete data[index];
-  for(int i =index; i <size; i++){
+  delete data[index];//-------------------------------- Might not be needed
+  for(int i =index; i <size-1; i++){ // -------------------- Added -1
     data[i] = data[i +1];
   }
   size--;
@@ -157,7 +157,7 @@ MyArray<T>& MyArray<T>::operator=(const MyArray &ma){
 }
 // Destructor
 template <typename T>
-MyArray<T>::~MyArray(){cout << "Destructor" <<endl;delete []data;}
+MyArray<T>::~MyArray(){delete []data;}
 // End of Big  Three -----------------------------------------------------------
 
 // NonMember Print -------------------------------------------------------------
@@ -167,6 +167,8 @@ void print(const MyArray<T> &d) {
     for(int i=0; i<d.getSize();i++) {
         cout << d[i]->getID() << " ";
     }
+
+    // Not needed below----------------------------------
     for(int i=0; i<d.getSize();i++) {
       cout <<d[i] <<" "; // Mem Addr
     }
@@ -182,16 +184,8 @@ int main(){
   }
   print(ObjectArray);
 
-cout <<endl <<endl;
-  MyArray<SomeObj*> test {};
-  test =  ObjectArray;
-
-
-  ObjectArray.push_back(new SomeObj(123));
-  cout<<ObjectArray.getCap() <<endl;
-  print(ObjectArray);
-  ObjectArray.erase(10);
-  print(ObjectArray);
+  MyArray<SomeObj*> b{ObjectArray};
+  print(b);
 
 
 
