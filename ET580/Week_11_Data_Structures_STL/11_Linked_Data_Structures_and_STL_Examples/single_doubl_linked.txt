@@ -9,6 +9,22 @@ Single Linked list
 
     Similar to stack/queue:
       Can only travel in one direction
-      Stack node or queue node, or single linked list: all next pointer and data
+      Stack node, queue node, or single linked list: all next pointers point to the next data
     Difference:
         Can insert or remove anywhere
+
+
+Doubly Linked List
+  List of nodes where each node has two links to previous and next
+  Last node points to nullptr
+
+  head: pointer to first node
+  tail: Pointer to last node
+
+  Can be traverse fowards or backwards
+
+  Need to find element when inserting same with single link list
+    But if you have a pointer to the specific index, you can just go there
+    and go backwards
+
+Container class: implement a data structure as a class an object oriented approach

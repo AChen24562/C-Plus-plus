@@ -1,0 +1,9 @@
+Iterator class:
+  Class used to traverse through a container class
+  iterator objects are used to access data from within a container class
+
+  Iterators replace print and overload << functions for containers
+
+  Iterators can be forward, backward, const or not const
+
+  More encapsulation
