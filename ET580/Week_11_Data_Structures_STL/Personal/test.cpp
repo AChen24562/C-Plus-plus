@@ -1,13 +1,12 @@
 #include <iostream>
-using namespace std;
 
-int getMem(int n){
-  return &n;
+std::string getN(std::string n){
+  return n;
 }
 
 int main(){
-  int n = 10;
-  cout << getMem(n);
+  std::string n = "hi";
+  std::cout << getN(n);
 
 
 
