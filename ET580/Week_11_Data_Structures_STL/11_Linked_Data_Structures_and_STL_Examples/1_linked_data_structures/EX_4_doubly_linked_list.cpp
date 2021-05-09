@@ -15,20 +15,20 @@ private:
     DNode *tail;
     int size;
 public:
-    DLList();
-    bool empty();
-    int getSize() const;
-    DNode* front();
-    DNode* back();
-    void push_back(int n);
-    void push_front(int n);
-    void pop_front();
-    void pop_back();
-    void insert(int d, int n);
-    void insert(DNode *d, int n);
-    void erase(int e);
-    void erase(DNode *d);
-    void print() const;
+    DLList();// Done
+    bool empty(); // done
+    int getSize() const; // done
+    DNode* front(); // done
+    DNode* back(); //done
+    void push_back(int n); // done
+    void push_front(int n);// done
+    void pop_front();// done
+    void pop_back();// done
+    void insert(int d, int n);//done
+    void insert(DNode *d, int n);//done
+    void erase(int e);// done
+    void erase(DNode *d);// done
+    void print() const; // done
     void printRev() const;
     // big three not implemented to simplify code (normally should be implemented)
 };
@@ -212,6 +212,12 @@ int main() {
     list.push_front(100);                       // prepend 100
     list.push_front(50);                        // prepend 50
     list.print();                               // print forward order
+    std::cout << std::endl;
+
+    list.erase(300);
+    std::cout<<std::endl;
+    list.print();
+
     std::cout << "\n";
     list.printRev();                            // print reverse order
     std::cout << "\n\n";
@@ -244,7 +250,7 @@ int main() {
     }
     list.erase(current);                                // erase node 300 given pointer
 
-    current = list.front();
+
     while(current != nullptr && current->data != 900){  // locate the node 900
         current=current->next;
     }
