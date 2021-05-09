@@ -1,5 +1,15 @@
 #include <iostream>
 
+// Double linked list
+// Two pointers going to the previous and next node
+// Transveres backwards or forwards, but must start from the beginning or end
+
+// Insert at any point, must also transverse whole list to insert, unless you have
+// a pointer to the specific value
+
+// Single linked list
+// Must transverse whole linked list to insert at a specific point
+
 class Node{
 private:
   int data;
