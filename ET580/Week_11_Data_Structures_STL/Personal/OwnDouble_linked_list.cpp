@@ -1,5 +1,9 @@
 #include <iostream>
 
+// Double linked list
+// Transvers backwards or forwards, but must start from the beginning or end
+// Insert at any point
+
 class Node{
 private:
   int data;

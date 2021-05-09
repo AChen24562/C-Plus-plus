@@ -2,7 +2,7 @@
 
 // Stacks Last in first out
 // start from the top
-// One direction 
+// One direction downward
 
 class Node{
 private:
@@ -58,7 +58,30 @@ public:
     size --;
 
   }
+// Iterator
+class StackIterator{
+public:
+  Node *current;
+  StackIterator(Stack *s): current(s->topNode){}
 
+  bool hasNext(){return current != nullptr;}
+  StackIterator &operator++(){
+    current = current->getNext();
+    return *this;
+  }
+
+  StackIterator operator++(int){
+    StackIterator temp = *this;
+    current = current->getNext();
+    return temp;
+  }
+  int operator*()const{
+    return current->getData();
+  }
+};
+StackIterator &begin(){
+  return *(new StackIterator(this));
+}
 
 };
 
@@ -76,18 +99,22 @@ int main(){
   s.push(60);
 
   s.print();
-  std::cout << "\n";
 
-  s.pop();                                // remove elements from stack
-  s.pop();
+  Stack::StackIterator it1 = s.begin();
+  std::cout << *it1 << "\n";                  // print the element currently pointed to by the iterator
 
-  s.print();
-  std::cout << "\n";
+  ++it1;                                      // advance the iterator to the next object
+  std::cout << *it1 << "\n\n";                // print the element currently pointed to by the iterator
+
+
+  Stack::StackIterator it2 = s.begin();    // construct an iterator which points to first element
+  while( it2.hasNext() ) {                    // iterate through the list
+      std::cout << *it2 << " ";               // print current element
+      it2++;                                  // advance the iterator
+  }
 
   std::cout << std::endl;
 
-
-  std::cout << std::endl << s.top();
 
 
 
