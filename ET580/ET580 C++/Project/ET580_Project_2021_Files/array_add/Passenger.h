@@ -2,11 +2,13 @@
 #define PASSENGER_H
 
 #include "Person.h"
+#include "MyArray.h"
 
+class Flight;
 
 class Passenger:public Person{
 private:
-
+MyArray<Flight*> *flights;
 public:
   Passenger();
   Passenger(std:: string n);

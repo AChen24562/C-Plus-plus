@@ -14,7 +14,6 @@ class Airline;
 class Airport;
 class Pilot;
 class Passenger;
-class MyArray<Passenger*>;
 
 
 class Flight{
@@ -43,7 +42,7 @@ public:
   friend std::ostream& operator<<(std::ostream &out, const Flight &f){
       out << f.number << " " << f.airline->getName()
           <<f.source->getName() << f.destination->getName()
-          <<f.pilot->getName() << f.passengers->getName();
+          <<f.pilot->getName() << f.passengers[0]->getName();
       return out;
   }
 

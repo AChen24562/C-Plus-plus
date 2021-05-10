@@ -61,7 +61,7 @@ int main() {
     /* before cancel */
     std::cout << "\nBEFORE CANCEL" << "\n";
     std::cout << *f2;             // display flight
-    std::cout << *a3;             // display flight f2 departure airport
+    std::cout << *ap3;             // display flight f2 departure airport
     std::cout << *p2;             // display flight f2 pilot
     std::cout << *pas2;           // display flight f2 passenger
 
@@ -69,7 +69,7 @@ int main() {
     f2->cancel();
     std::cout << "\n\nAFTER CANCEL" << "\n";
     std::cout << *f2;             // display flight after cancel
-    std::cout << *a3;             // display flight f2 departure airport after flight cancel
+    std::cout << *ap3;             // display flight f2 departure airport after flight cancel
     std::cout << *p2;             // display flight f2 pilot airport after flight cancel
     std::cout << *pas2 << "\n";   // display flight f2 passenger airport after flight cancel
     std::cout << "END PHASE 4 **************************************************\n";
