@@ -13,6 +13,15 @@ Single Linked list
     Difference:
         Can insert or remove anywhere
 
+    BIG O SPEED
+      Push_front O(1)
+      Push_Back O(1)
+      Pop_Front O(1)
+      pop_back O(n)
+      Insert O(n)
+      erase O(n)
+      Less memory per node to one less pointer, but only forward transversal
+
 
 Doubly Linked List
   List of nodes where each node has two links to previous and next
@@ -28,3 +37,16 @@ Doubly Linked List
     and go backwards
 
 Container class: implement a data structure as a class an object oriented approach
+
+  BIG O SPEED
+    Push_Front O(1)
+    Push_back O(1)
+    Pop_front O(1)
+    Pop_back O(1)
+    Insert O(n)
+      If pointer to the specific node is known, then O(1)
+    Erase O(n)
+      If pointer to the specific node is known, then O(1)
+
+    More memory per node due to a forward and backward pointer, but has two directions
+    that you can move in
