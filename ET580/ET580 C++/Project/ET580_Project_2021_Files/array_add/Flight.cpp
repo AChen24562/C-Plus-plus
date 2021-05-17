@@ -18,3 +18,14 @@ void Flight::setAirline(Airline &a){airline = &a;}
 void Flight::setSource(Airport &s){source = &s;}
 void Flight::setDestination(Airport &d){destination = &d;}
 void Flight::setPilot(Pilot &p){pilot = &p;}
+
+void Flight::addPassenger(Person &p){
+
+  Passenger *temp = new  Passenger("Alvin");
+  passengers->push_back(temp);
+  std::cout << &p;
+  //else{
+  //  passengers->setName(p.name);
+  //}
+
+}

@@ -29,6 +29,8 @@ public:
       out << ap.name << " " << ap.symbol << ap.arrivals << ap.departures;
       return out;
   }
+
+
 };
 
 

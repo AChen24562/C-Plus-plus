@@ -34,8 +34,8 @@ int main() {
 //    std::cout << "PHASE 4 **************************************************\n\n";
     /* add passengers */
 //    std::cout << "ADD PASSENGERS *******************************************\n";
-//    f1->addPassenger(*pas1);
-//    f1->addPassenger(*pas2);
+    f1->addPassenger(*pas1);
+    f1->addPassenger(*pas2);
 //    f1->addPassenger(*pas3);
 //    f2->addPassenger(*pas2);
 //    f2->addPassenger(*pas3);

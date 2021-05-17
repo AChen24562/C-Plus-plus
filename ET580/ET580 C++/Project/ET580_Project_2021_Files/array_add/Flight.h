@@ -23,7 +23,7 @@ private:
   Airport *source;
   Airport *destination;
   Pilot *pilot;
-  MyArray<Passenger*> *passengers;
+  MyArray<Person*> *passengers;
 public:
   Flight();
   Flight(int n, Airline &a, Airport &s, Airport &d, Pilot &p);
@@ -40,11 +40,13 @@ public:
   void setPilot(Pilot &p);
 
   friend std::ostream& operator<<(std::ostream &out, const Flight &f){
-      out << f.number << " " << f.airline->getName()
-          <<f.source->getName() << f.destination->getName()
-          <<f.pilot->getName() << f.passengers[0]->getName();
-      return out;
+    out << f.number << " " << f.airline->getName() << " "
+        << *(f.source) << " " << *(f.destination) << " "
+        << *(f.pilot);
+    return out;
   }
+
+  void addPassenger(Person &p);
 
 };
 

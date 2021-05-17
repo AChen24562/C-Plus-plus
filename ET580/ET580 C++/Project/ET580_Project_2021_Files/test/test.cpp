@@ -1,8 +1,6 @@
-#ifndef MYARRAY_H
-#define MYARRAY_H
-
 #include <iostream>
 #include <cassert>
+
 
 // Template Class---------------------------------------------------------------
 template<typename T>
@@ -159,4 +157,38 @@ void print(const MyArray<T> &d) {
     std::cout <<std::endl;
 }
 
-#endif
+class Person{
+protected:
+  std::string name;
+public:
+  Person():Person("NoName"){}
+  Person(std::string n): name(n){}
+
+  virtual void setName(std::string n) =0;
+  virtual std::string getName()const = 0;
+
+};
+
+
+class Passenger:public Person{
+private:
+public:
+  Passenger();
+  Passenger(std:: string n):Person(n){}
+
+  void setName(std::string n)override{name = n;}
+  std::string getName()const override{return name;}
+
+
+};
+
+
+int main(){
+  Passenger *pas = new Passenger("Alvin");
+  std:: cout <<pas->getName();
+
+
+
+
+  return 0;
+}
