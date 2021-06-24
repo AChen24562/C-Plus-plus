@@ -66,10 +66,10 @@ int main(){
   cout.setf(ios::fixed);
   cout.precision(2);
 
-  Student s2{"Issac Asimov", "English", 3.33};
+  Student s2("Issac Asimov", "English", 3.33);
   s2.display();
 
-  Student s1{"John Williams", "Music", 4.00};
+  Student s1("John Williams", "Music", 4.00);
   s1.display2();
 
 

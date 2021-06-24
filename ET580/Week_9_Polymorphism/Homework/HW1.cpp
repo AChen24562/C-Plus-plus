@@ -44,8 +44,8 @@ int main(){
 
 // Main driver function
   Person **p = new Person *[4]; // create array of pointers that point to Person objects
-  p[0] = new Student{"Jake", 1010}; // store student object into first element of array of pointers
-  p[1] = new Student{"Kim", 4364};// store student object into second element of array of pointers
+  p[0] = new Student("Jake", 1010); // store student object into first element of array of pointers
+  p[1] = new Student("Kim", 4364);// store student object into second element of array of pointers
 
   p[2] = new Employee("Charles", "Penn Tester"); // store Employee object into third element of array of pointers
   p[3] = new Employee("Sara", "Web Developer");// store Employee object into fourth element of array of pointers
